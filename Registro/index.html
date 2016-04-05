@@ -21,9 +21,9 @@
 <body>
 
 	<div class="container well">
-		<form action = "View.php" method="post" >
+		<form  method="post" >
 				<div class="formularioRegistro" name="formularioRegistro">
-				<input type="email" class="form-control" id="email" name="emailorNick" placeholder="Correo electrónico" required >
+				<input type="text" class="form-control" id="email" name="emailorNick" placeholder="Correo electrónico" required >
 				<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" title="(La contraseña debe tener al menos 6 caracteres)"
 				required onblur="myFunction()">
 				<input type="text" class="form-control" id="nombre" name="nick" placeholder="Nick"required>
@@ -50,6 +50,11 @@
 						document.getElementById("contrasena").style.border=document.getElementById("email").style.border;
 					}
 				}
+			$(document).ready(function(){
+				$("#email").blur(function(){
+					$(this).val("ww");
+				});
+			});
 		</script>
 </body>
 </html>

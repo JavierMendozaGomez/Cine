@@ -6,18 +6,12 @@ class TransferUser{
 	public $newOffers;
 	public $listaFacturas;
 
-	function __construct($emailOrNick){
-		$this->email = $emailOrNick;
-		$this->nick = $emailOrNick;
-	}
-	
-	function __construct($email, $contrasena,$nick, $newOffers){
-		$this->email = $email;
-		$this->contrasena = $contrasena;
-		$this->nick = $nick;
+	function __construct(){
+		$this->email = "";
+		$this->contrasena = "";
+		$this->nick = "";
 		$this->newOffers = TRUE;
 	}
-
 	public function getNick(){
 		return $this->nick;
 	}
@@ -52,8 +46,8 @@ class TransferUser{
 	public function setCountry($country){
 		$this->country = $country;
 	}
-	public function setNewOffers(){
-
+	public function setNewOffers($newOffers){
+		$this->newOffers = $newOffers;
 	}
 	public function setPostalCode(){
 

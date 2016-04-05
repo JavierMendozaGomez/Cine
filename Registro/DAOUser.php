@@ -24,7 +24,12 @@ function readUserByEmailDAO( $tUser,$conn){
 		return null;
 	}
 	else{
-		return new TransferUser($fila[1],$fila[2],$fila[3],$fila[4]);
+		$tUser = new TransferUser();
+		$tUser->setEmail($fila[1]);
+		$tUser->setPassword($fila[2]);
+		$tUser->setNick($fila[3]);
+		$tUser->setNewOffers($fila[4]);
+		return $tUser;
 	}
 	}
 	catch(Exception $e){
@@ -43,7 +48,12 @@ function readUserByNickDAO( $tUser,$conn){
 		return null;
 	}
 	else{
-		return new TransferUser($fila[1],$fila[2],$fila[3],$fila[4]);
+		 $tUser = new TransferUser();
+		$tUser->setEmail($fila[1]);
+		$tUser->setPassword($fila[2]);
+		$tUser->setNick($fila[3]);
+		$tUser->setNewOffers($fila[4]);
+		return $tUser;
 	}
 	}
 	catch(Exception $e){
