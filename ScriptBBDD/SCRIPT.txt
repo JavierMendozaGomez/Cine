@@ -1,0 +1,5 @@
+CREATE TABLE USUARIO{
+   
+   nombre varchar2(15) primary key not null,
+   contrasena varchar2(10) encrypt,
+   correo(10) varchar2() not null
