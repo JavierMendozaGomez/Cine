@@ -15,7 +15,7 @@ function readByIDDAO(){
 }
 function readUserByEmailDAO( $tUser,$conn){
 	try{
-	$sql = "SELECT * FROM USER WHERE email = '".$tUser->getEmail()."' FOR update";
+	$sql = "SELECT * FROM USER WHERE email = '".$tUser->getEmail() ."' FOR update";
 	$resultado = $conn->query($sql);
   	$num_filas = $resultado->num_rows;
   	$fila = $resultado->fetch_array(MYSQLI_NUM);
@@ -39,7 +39,7 @@ function readUserByEmailDAO( $tUser,$conn){
 
 function readUserByNickDAO( $tUser,$conn){
 	try{
-	$sql = "SELECT * FROM USER WHERE nick = '".$tUser->nick() ."' FOR update";
+	$sql = "SELECT * FROM USER WHERE nick = '".$tUser->getNick() ."' FOR update";
 	$resultado = $conn->query($sql);
   	$num_filas = $resultado->num_rows;
   	$fila = $resultado->fetch_array(MYSQLI_NUM);

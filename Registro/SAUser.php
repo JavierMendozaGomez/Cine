@@ -3,7 +3,7 @@ require './DAOUser.php';
 
 
 function registerUserSA($TUser){
-	$ok;
+	//$ok;
 	$servername = "localhost:3306";
 	$username = "root";
 	$password = "1234";
@@ -32,22 +32,26 @@ function loginUser($TUser){
 	return $tUserDevuelto;
 }
 
-function readUserByEmailSA(){
+function readUserByEmailSA($TUser){
 	$servername = "localhost:3306";
 	$username = "root";
 	$password = "1234";
 	$db = "AW_DB";
 	$conn = new mysqli($servername, $username, $password, $db);
-	return readUserByEmailDAO($TUser,$conn);
+	$ok = readUserByEmailDAO($TUser,$conn);
+	$conn->close();
+	return $ok;
 }
 
-function readUserByNickSA(){
+function readUserByNickSA($TUser){
 	$servername = "localhost:3306";
 	$username = "root";
 	$password = "1234";
 	$db = "AW_DB";
 	$conn = new mysqli($servername, $username, $password, $db);
-	return readUserByNick($TUser,$conn);
+	$ok = readUserByNick($TUser,$conn);
+	$conn->close();
+	return $ok;
 }
 function modifyUserSA($TUser){
 

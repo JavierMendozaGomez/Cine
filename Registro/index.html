@@ -8,37 +8,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	
-</head>
-<style type="text/css">
-	div{
-	}
-	
-	a:hover{
-		text-decoration: underline;
-	}
-</style>
-<body>
-
-	<div class="container well">
-		<form  method="post" >
-				<div class="formularioRegistro" name="formularioRegistro">
-				<input type="text" class="form-control" id="email" name="emailorNick" placeholder="Correo electrónico" required >
-				<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" title="(La contraseña debe tener al menos 6 caracteres)"
-				required onblur="myFunction()">
-				<input type="text" class="form-control" id="nombre" name="nick" placeholder="Nick"required>
-				<input type="checkbox" checked name="newOffers"> Quiero recibir ofertas especiales por correo<br>
-				<input type="checkbox" required>He leido y estoy de acuerdo con los <a href="terminosYcondiciones.html">terminos y condiciones</a><br><br>
-				<button type="submit" id="EnviarRegistro" class="btn btn-default" name="loginUser">Registrate</button>
-				</div>
-		</form>
-	</div>
-
-
-
-   		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-		
 		<script>
 			function myFunction(){
 				var lacontrasena=document.getElementById("contrasena");
@@ -50,11 +21,51 @@
 						document.getElementById("contrasena").style.border=document.getElementById("email").style.border;
 					}
 				}
-			$(document).ready(function(){
+		$(document).ready(function(){
+				$("#elparrafo").hide();
 				$("#email").blur(function(){
-					$(this).val("ww");
+					//var _email = '_email=' + $(this).val();
+					$.ajax({
+						type: "post",
+						url:'ValidationForm.php',
+						data: {'action':'emailValidation','email': $(this).val()},
+						success: function(result) {
+							if(result == "true")
+								$("#elparrafo").show();
+
+							else					
+								$("#elparrafo").hide();
+						}
+					});
 				});
 			});
 		</script>
+		
+</head>
+<style type="text/css">
+	div{
+	}
+	
+	a:hover{
+		text-decoration: underline;
+	}
+</style>
+<body>
+
+	<div class="container well" action="View.php">
+
+		<form  method="post" action="View.php">
+				<div class="formularioRegistro" name="formularioRegistro">
+				<input type="text" class="form-control" id="email" name="email" placeholder="Correo electrónico" required >
+				<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" title="(La contraseña debe tener al menos 6 caracteres)"
+				required onblur="myFunction()">
+				<input type="text" class="form-control" id="nick" name="nick" placeholder="Nick" required value="weqqqqqqqqqqqq">
+				<input type="checkbox" checked name="newOffers" id="newOffers"> Quiero recibir ofertas especiales por correo<br>
+				<input type="checkbox" required>He leido y estoy de acuerdo con los <a href="terminosYcondiciones.html">terminos y condiciones</a><br><br>
+				<button type="submit" id="EnviarRegistro" class="btn btn-default" name="registerUser">Registrate</button>
+				</div>
+				<p id="elparrafo">El usuario ya existe</p>
+		</form>
+	</div>	
 </body>
 </html>
