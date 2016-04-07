@@ -15,13 +15,14 @@ if(isset($_POST['action'])){
 function emailValidation(){
 	$tUsuario = new TransferUser();
 	$_elEmail = $_POST["email"];
-	$tUsuario->setEmail($_POST["email"]);
+	$tUsuario->setEmail($_elEmail);
 	$tUsuario = readUserByEmailSA($tUsuario);
-	if($tUsuario != null)
+	if($tUsuario != null){
 		echo "true"; 
-	else{
-		echo "false";
 	}
+	else
+		echo "false";
+	
 }
 
 function nickValidation(){

@@ -16,6 +16,7 @@ function registerUserSA($TUser){
 	else{
 		$ok = FALSE;
 	}
+
 	$conn->close();
 	return $ok;
 }
@@ -38,9 +39,9 @@ function readUserByEmailSA($TUser){
 	$password = "1234";
 	$db = "AW_DB";
 	$conn = new mysqli($servername, $username, $password, $db);
-	$ok = readUserByEmailDAO($TUser,$conn);
+	$TUser = readUserByEmailDAO($TUser,$conn);
 	$conn->close();
-	return $ok;
+	return $TUser;
 }
 
 function readUserByNickSA($TUser){
@@ -49,9 +50,9 @@ function readUserByNickSA($TUser){
 	$password = "1234";
 	$db = "AW_DB";
 	$conn = new mysqli($servername, $username, $password, $db);
-	$ok = readUserByNick($TUser,$conn);
+	$TUser = readUserByNickDAO($TUser,$conn);
 	$conn->close();
-	return $ok;
+	return $TUser;
 }
 function modifyUserSA($TUser){
 
