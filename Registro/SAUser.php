@@ -3,7 +3,6 @@ require './DAOUser.php';
 
 
 function registerUserSA($TUser){
-	//$ok;
 	$servername = "localhost:3306";
 	$username = "root";
 	$password = "1234";
