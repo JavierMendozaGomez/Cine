@@ -34,6 +34,17 @@ function nickValidation(){
 	else
 		echo "false";
 	}
+
 function emailorNickValidation(){
+	$tUsuario = new TransferUser();
+	$tUsuario->setNick($_POST['emailOrNick']);
+	$tUsuario->setEmail(
+	$tUsuario = readUserByNickSA($tUsuario);
+	if($tUsuario != null){
+		echo "true";
+	}
+	else{
+		echo "false";
+	}
 }
 ?>

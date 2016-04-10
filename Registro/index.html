@@ -26,6 +26,8 @@
 		$(document).ready(function(){
 				$colorOk = document.getElementById("email").style.border;
 				$colorError = 'solid 1px red';
+				$("#formularioRegistro").hide();
+				$("#login").hide();
 				$("#verificacionEmail").hide();
 				$("#verificacionEmail").css('color','red');
 				$("#verificacionContrasena").hide();
@@ -86,6 +88,20 @@
 
 				});
 
+				$("#loginButton").click(function(){
+					$("#registerOrLogin").toggle( "slide" );
+					$("#login").toggle( "slide" );
+				});
+
+				$("#registerButton").click(function(){
+					$("#registerOrLogin").toggle( "slide" );
+					$("#formularioRegistro").toggle( "slide" );
+				});
+
+				$("#loginNextStep").click(function(){
+				});
+
+
 		});
 		</script>
 		
@@ -97,25 +113,61 @@
 	a:hover{
 		text-decoration: underline;
 	}
+
+
+	<style>
+	 
+	body {
+	  padding-top: 40px;
+	  padding-bottom: 40px;
+	  
+	}
+	 
+	.register {
+	  max-width: 330px;
+	  padding: 15px;
+	  margin: 0 auto;
+	 
+	}
+	 
+	#sha{
+		max-width: 340px;
+	    -webkit-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+	    -moz-box-shadow:    0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+	    box-shadow:         0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+	    border-radius: 6%;
+	  }
+ 
+</style>
 </style>
 <body>
-
-	<div class="container well" action="View.php">
-
-		<form  method="post" action="View.php">
-				<div class="formularioRegistro" name="formularioRegistro">
-				<input type="text" class="form-control" id="email" name="email" placeholder="Correo electrónico" required >
+<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
+	<div class="container well" id="sha">
+    <div class="col-xs-12">
+			<div class="formularioRegistro" name="formularioRegistro" id="formularioRegistro">
+				<form  class ="register" method="post" action="View.php">
+				<input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico" required >
 				<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" title="(La contraseña debe tener al menos 6 caracteres)"
 				required onblur="myFunction()">
 				<input type="text" class="form-control" id="nick" name="nick" placeholder="Nick" required value="weqqqqqqqqqqqq">
 				<input type="checkbox" checked name="newOffers" id="newOffers"> Quiero recibir ofertas especiales por correo<br>
-				<input type="checkbox" required>He leido y estoy de acuerdo con los <a href="terminosYcondiciones.html">terminos y condiciones</a><br><br>
-				<button type="submit" id="EnviarRegistro" class="btn btn-default" name="registerUser">Registrate</button>
-				</div>
+				<input type="checkbox" required>He leido y estoy de acuerdo con las <a href="terminosYcondiciones.html">terminos y condiciones</a><br><br>
+				<button type="submit" id="EnviarRegistro" class="btn btn-lg btn-primary btn-block" name="registerUser">Registrate</button>
 				<p id="verificacionEmail" >El correo electronico ya se ha usado</p>
 				<p id="verificacionContrasena">La contraseña tiene que tener longitud minima 6 caracteres</p>
 				<p id="verificacionNick">El nick ya está en uso</p>
-		</form>
-	</div>	
+				</form>
+			</div>
+			<div class="login" name="login" id="login">
+				<input type="text" class="form-control" id="emailOrNick" name="emailOrNick" placeholder="Correo electronico o nick" required ><br>
+				<button type="button" class="btn btn-lg btn-primary btn-block" id="loginNextStep">Siguiente</button>
+			</div>
+			
+			<div class="registerOrLogin" id="registerOrLogin">
+				<button type="button" class="btn btn-lg btn-primary btn-block" id="loginButton">Iniciar sesión</button>
+				<button type="button" class="btn btn-lg btn-primary btn-block" id="registerButton">Registrate</button>
+			</div>
+	</div>
 </body>
 </html>
