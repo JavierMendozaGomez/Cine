@@ -1,0 +1,47 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<html lang="es">
+<head>
+	<title>
+		Registro
+		</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script src="loginRegister.js"></script>
+		<link rel="stylesheet" type="text/css" href="loginRegister.css" />
+
+
+<body>
+<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
+	<div class="container well" id="sha">
+    <div class="col-xs-12">
+			<div class="formularioRegistro" name="formularioRegistro" id="formularioRegistro">
+				<form  class ="register" method="post" action="View.php">
+				<input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico" required >
+				<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" title="(La contraseña debe tener al menos 6 caracteres)"
+				required onblur="myFunction()">
+				<input type="text" class="form-control" id="nick" name="nick" placeholder="Nick" required value="weqqqqqqqqqqqq">
+				<input type="checkbox" checked name="newOffers" id="newOffers"> Quiero recibir ofertas especiales por correo<br>
+				<input type="checkbox" required>He leido y estoy de acuerdo con las <a href="terminosYcondiciones.html">terminos y condiciones</a><br><br>
+				<button type="submit" id="EnviarRegistro" class="btn btn-lg btn-primary btn-block" name="registerUser">Registrate</button>
+				<p id="verificacionEmail" >El correo electronico ya se ha usado</p>
+				<p id="verificacionContrasena">La contraseña tiene que tener longitud minima 6 caracteres</p>
+				<p id="verificacionNick">El nick ya está en uso</p>
+				</form>
+			</div>
+			<div class="login" name="login" id="login">
+				<input type="text" class="form-control" id="emailOrNick" name="emailOrNick" placeholder="Correo electronico o nick" required ><br>
+				<button type="button" class="btn btn-lg btn-primary btn-block" id="loginNextStep">Siguiente</button>
+			</div>
+			
+			<div class="registerOrLogin" id="registerOrLogin">
+				<button type="button" class="btn btn-lg btn-primary btn-block" id="loginButton">Iniciar sesión</button>
+				<button type="button" class="btn btn-lg btn-primary btn-block" id="registerButton">Registrate</button>
+			</div>
+	</div>
+</body>
+</html>
