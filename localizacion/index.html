@@ -6,17 +6,22 @@
 <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
 <script>
-	$(document).ready(function () {		
-		$("#longitude").hide();
-		$("#latitude").hide();
+	var x;
+	$(window).load(function() {
 		$("#locationButton").click(function(){
-				getLocation();	
-				$.ajax({
-						url: "http://nominatim.openstreetmap.org/reverse?format=json&lat=40.4754202&lon=-3.5865715&zoom=18&addressdetails=1", 	
-						success: function(result){
-				    		$("#city").val(result.address.city);
-				    		$("#postalCode").val(result.address.postcode);
-				    }});
+				getLocation();
+				setTimeout(function(){
+					var	lat = document.getElementById("latitude").value;
+					var lon = document.getElementById("longitude").value;
+					var urlLocalization = "http://nominatim.openstreetmap.org/reverse?format=json&lat="+lat+"&lon="+lon +"&zoom=18&addressdetails=1";
+					$("#elparrafo").text(urlLocalization);
+					$.ajax({
+							url: urlLocalization, 	
+							success: function(result){
+					    		$("#city").val(result.address.city);
+					    		$("#postalCode").val(result.address.postcode);
+					    }});
+					}, 2000);
 			});
 	});
 	function getLocation() {
@@ -25,15 +30,14 @@
        navigator.geolocation.getCurrentPosition(showPosition);
     } else { 
     }
-
+/*
    		 document.getElementById("latitude").value = "40.4754202";
-	    document.getElementById("longitude").value = "-3.5865715";	
+	    document.getElementById("longitude").value = "-3.5865715";	*/
 	}
 	function showPosition(position) {
-	    document.getElementById("latitude").value = position.coords.latitude;
-	    document.getElementById("longitude").value = position.coords.longitude;	
+		document.getElementById("latitude").value = position.coords.latitude;
+		document.getElementById("longitude").value = position.coords.longitude;
 	}
-	;
 </script>
 </head>
 <body>
@@ -43,6 +47,7 @@
 <button  id="locationButton" >Encuentrame</button>
 <input  id="latitude"></input>
 <input id="longitude"></input>
+<p id="elparrafo"></p>
 
 
 </body>

@@ -85,8 +85,11 @@ function myFunction(){
 					$("#formularioRegistro").toggle( "slide" );
 				});
 
-				$("#loginNextStep").click(function(){
+
+				$("#urlImgPerfil").blur(function(){
+					$("#segundoAvatar").val("si");
 				});
 
 
-		});
+				});
+			

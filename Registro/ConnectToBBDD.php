@@ -21,6 +21,9 @@ else{
 				    contrasena varchar(30) NOT NULL,
 				    nick varchar(30) NOT NULL,
 				    newOffers BIT,
+				    image varchar(90) NOT NULL,
+				    city varchar(30) NOT NULL,
+				    postalCode varchar(20) NOT NULL,
 				    PRIMARY KEY (email),
 				    UNIQUE KEY(ID)
 				    )ENGINE=INNODB

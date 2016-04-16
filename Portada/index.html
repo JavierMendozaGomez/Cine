@@ -6,8 +6,12 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>TuCine</title>
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
 
 	<meta name="description" content="fullPage full-screen backgrounds." />
 	<meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,backgrounds,full-screen" />
@@ -19,18 +23,87 @@
 	<link rel="stylesheet" type="text/css" href="FondoStyle.css" />
 	<script type="text/javascript" src="FondoJavascript.js"></script>
 
+
+
+	<script src="loginRegister.js"></script>
+	<link rel="stylesheet" type="text/css" href="loginRegister.css" />
+
 </head>
 <body>
 
 <div id="fullpage">
-	<div class="section" id="section0">
-		<div class="intro">
-			<h1>Inicio</h1>
-		</div>
+	<div  class="section register" id="section0">
+
+			<div class="formularioRegistro" name="formularioRegistro" id="formularioRegistro">
+				<form  class ="register" method="post" action="View.php">
+				<input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico" required >
+				<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" title="(La contraseña debe tener al menos 6 caracteres)"
+				required onblur="myFunction()">
+				<input type="text" class="form-control" id="nick" name="nick" placeholder="Nick" required value="weqqqqqqqqqqqq">
+				<div>
+				<input type="checkbox" checked name="newOffers" id="newOffers">
+				<label for="newOffers">Quiero recibir nuevas ofertas</label><br>
+				</div>
+				<div>
+				<input type="checkbox" id="terminosYCondiciones" required>
+				<label for="terminosYconficiones">Estoy de acuerdo con los <a href="terminosYcondiciones.html">terminos y condiciones</a></label>
+				</div>
+				<button type="button" id="registroDatos" class="btn btn-lg btn-primary btn-block">Siguiente</button>
+				<p id="verificacionEmail" >El correo electronico ya se ha usado</p>
+				<p id="verificacionContrasena">La contraseña tiene que tener longitud minima 6 caracteres</p>
+				<p id="verificacionNick">El nick ya está en uso</p>
+				</form>
+			</div>
+
+
+			<div class="registerNextStep" id="registerNextStep">
+			<form action="View.php">
+				<img src="http://www.cyclogen.com/wp-content/uploads/2014/07/perfil-anonimo-160x160.jpg" id="elAvatar" class="img-responsive img-circle avatar" />
+				<input type="text" class="form-control" id="urlImgPerfil" name="urlImgPerfil" placeholder="URL imagen perfil">
+				<div id="seleccionaCiudad">
+   						 <input type="text" class="form-control" list="ciudad" id="city" name="city" placeholder="Ciudad" required>
+   						 <datalist id="ciudad">
+   						 	<option value="Argentina"></option>
+   							<option value="Australia"></option>
+							<option value="Alemania"></option>
+   							<option value="Canadá"></option>
+   							<option value="Chile"></option>
+ 							<option value="España"></option>
+ 							<option value="Estados Unidos"></option>
+						   	<option value="Francia"></option>
+						   	<option value="Italia"></option>
+						   	<option value="Mexico"></option>
+						   	<option value="Nueva Zelanda"></option>
+						   	<option value="Portugal"></option>
+						   	<option value="Reino Unido"></option>
+   						 </datalist>
+				</div>
+				<input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Código postal" required>
+					  <div class="inner"><button type="button" id="locationButton" class="btn btn-lg btn-primary btn-block"  >Encuentrame!</button></div>
+					  <div class="inner"><button type="submit" class="btn btn-lg btn-primary btn-block" name="registerButton">Registrate</button></div>
+			   		  <input  id="latitude"></input>
+					  <input id="longitude"></input>
+			</form>
+			</div>
+
+			<div class="login" name="login" id="login">
+				<input type="text" class="form-control" id="emailOrNick" name="emailOrNick" placeholder="Correo electronico o nick" required ><br>
+				<button type="button" class="btn btn-lg btn-primary btn-block" id="loginNextStepButton">Siguiente</button>
+			</div>
+
+			<div class="loginNextStep" id="loginNextStep"></div>
+			
+			<div class="registerOrLogin" id="registerOrLogin">
+				<button type="button" class="btn btn-lg btn-primary btn-block" id="loginButton">Iniciar sesión</button>
+				<button type="button" class="btn btn-lg btn-primary btn-block" id="registerButton">Registrate</button>
+				<button type="button" class="btn btn-lg btn-primary btn-block" id="continuarButton">Continuar</button>
+			</div>
+
 	</div>
-	<div class="section" id="section1"><h1>¿Qué es?</h1></div>
-	<div class="section" id="section2"><h1>A quien va dirigido</h1></div>
+	<div class="section" id="section1"><h4>¿Qué es?</h4></div>
+	<div class="section" id="section2"><h4>A quien va dirigido</h4></div>
 </div>
+
 
 </body>
 </html>
