@@ -46,43 +46,43 @@
 				<label for="newOffers">Quiero recibir nuevas ofertas</label><br>
 				</div>
 				<div>
-				<input type="checkbox" id="terminosYCondiciones" checked >
+				<input type="checkbox" id="terminosYCondiciones"  >
 				<label for="terminosYCondiciones">Estoy de acuerdo con los terminos y condiciones</label><br>
 				</div>
-				<button type="button" id="registroDatos" class="btn btn-lg btn-primary btn-block" name="registerUser">Siguiente</button>
+				<button type="button" id="registroDatos" class="btn btn-lg btn-primary btn-block">Siguiente</button>
 				<p id="verificacionEmail" >El correo electronico ya se ha usado</p>
 				<p id="verificacionContrasena">La contraseña tiene que tener longitud minima 6 caracteres</p>
 				<p id="verificacionNick">El nick ya está en uso</p>
 				</div>
-				<!--
-				<div class="registerNextStep" id="registerNextStep">
+				
+			<div class="registerNextStep" id="registerNextStep">
 				<img src="http://www.cyclogen.com/wp-content/uploads/2014/07/perfil-anonimo-160x160.jpg" id="elAvatar" class="img-responsive img-circle avatar" />
 				<input type="text" class="form-control" id="urlImgPerfil" name="urlImgPerfil" placeholder="URL imagen perfil">
 				<div id="seleccionaCiudad">
-   						 <input type="text" class="form-control" list="ciudad" id="city" name="city" placeholder="Ciudad" required>
-   						 <datalist id="ciudad">
-   						 	<option value="Argentina"></option>
-   							<option value="Australia"></option>
-							<option value="Alemania"></option>
-   							<option value="Canadá"></option>
-   							<option value="Chile"></option>
- 							<option value="España"></option>
- 							<option value="Estados Unidos"></option>
-						   	<option value="Francia"></option>
-						   	<option value="Italia"></option>
-						   	<option value="Mexico"></option>
-						   	<option value="Nueva Zelanda"></option>
-						   	<option value="Portugal"></option>
-						   	<option value="Reino Unido"></option>
-   						 </datalist>
-				</div>
-				<input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Código postal" required>
-					  <div class="inner"><button type="button" id="locationButton" class="btn btn-lg btn-primary btn-block"  >Encuentrame!</button></div>
-			   		  <input  id="latitude"></input>
-					  <input id="longitude"></input>
-				</div>
-				-->
-			  <div class="inner"><button type="submit" class="btn btn-lg btn-primary btn-block" name="registerUserNextStep">Registrate</button></div>
+	   						 <input type="text" class="form-control" list="ciudad" id="city" name="city" placeholder="Ciudad">
+	   						 <datalist id="ciudad">
+	   						 	<option value="Argentina"></option>
+	   							<option value="Australia"></option>
+								<option value="Alemania"></option>
+	   							<option value="Canadá"></option>
+	   							<option value="Chile"></option>
+	 							<option value="España"></option>
+	 							<option value="Estados Unidos"></option>
+							   	<option value="Francia"></option>
+							   	<option value="Italia"></option>
+							   	<option value="Mexico"></option>
+							   	<option value="Nueva Zelanda"></option>
+							   	<option value="Portugal"></option>
+							   	<option value="Reino Unido"></option>
+	   						 </datalist>
+				</div>	
+				<input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Código Postal">
+				 <div class="inner"><button type="button" id="locationButton" class="btn btn-lg btn-primary btn-block">Encuentrame!</button></div>
+			 	 <div class="inner"><button type="submit" id="registerNextStepButton" class="btn btn-lg btn-primary btn-block" name="registerUser">Registrate</button></div>
+			 	 <input  id="latitude"></input><input id="longitude"></input>
+			 	 <p id="verificacionCiudad">Se debe elegir una ciudad</p>
+				 <p id="verificacionPostalCode">Se debe especificar el código postal</p>
+			</div>
 
 			</form>
 

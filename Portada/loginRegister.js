@@ -34,6 +34,8 @@ function getLocation() {
 				$("#verificacionEmail").hide();
 				$("#verificacionContrasena").hide();
 				$("#verificacionNick").hide();
+				$("#verificacionCiudad").hide();
+				$("#verificacionPostalCode").hide();
 				$("#loginNextStep").hide();
 				$("#longitude").hide();
 				$("#latitude").hide();
@@ -87,12 +89,40 @@ function getLocation() {
 					else if($("#verificacionNick").is(":visible") || ($("#nick").val() == "")){
 							$("#nick").focus();
 					}
+					else if (!($("#terminosYCondiciones").is(":checked") )){
+							$("#terminosYCondiciones").focus();
+
+					}
 					else{
 						$("#formularioRegistro").toggle( "slide" );
 						$("#registerNextStep").toggle( "slide" );
 
 					}
 
+				});
+				$("#city").blur(function(){
+					if($("#city").val()==""){
+						$("#city").css('border', $colorError);
+						$("#verificacionCiudad").slideDown();
+
+					}
+					else{
+						$("#city").css('border', $colorOk);
+						$("#verificacionCiudad").slideUp();
+
+					}
+				});
+				$("#postalCode").blur(function(){
+					if($("#postalCode").val()==""){
+						$("#postalCode").css('border', $colorError);
+						$("#verificacionPostalCode").slideDown();
+
+					}
+					else{
+						$("#postalCode").css('border', $colorOk);
+						$("#verificacionPostalCode").slideUp();
+
+					}
 				});
 
 				$("#loginButton").click(function(){
@@ -113,6 +143,17 @@ function getLocation() {
 					 $('#elAvatar').attr('src',$("#urlImgPerfil").val());
 				});
 
+				$("#registerNextStepButton").click(function(e){
+					if($("#verificacionCiudad").is(":visible") || ($("#city").val() == "")){
+							$("#city").focus();
+							e.preventDefault();
+						}
+					else if($("#verificacionPostalCode").is(":visible") || ($("#postalCode").val() == "")){
+							$("#postalCode").focus();
+							e.preventDefault();
+						}
+				});
+
 				$("#locationButton").click(function(){
 				getLocation();
 				setTimeout(function(){
@@ -127,6 +168,8 @@ function getLocation() {
 					    }});
 					}, 2000);
 				});
+
+
 		});
 
 
