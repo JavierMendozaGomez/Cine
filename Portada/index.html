@@ -33,31 +33,29 @@
 
 <div id="fullpage">
 	<div  class="section register" id="section0">
-
+			<form method="post" action="View.php">
 			<div class="formularioRegistro" name="formularioRegistro" id="formularioRegistro">
-				<form  class ="register" method="post" action="View.php">
 				<input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico" required >
 				<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" title="(La contraseña debe tener al menos 6 caracteres)"
 				required onblur="myFunction()">
+
 				<input type="text" class="form-control" id="nick" name="nick" placeholder="Nick" required value="weqqqqqqqqqqqq">
+
 				<div>
 				<input type="checkbox" checked name="newOffers" id="newOffers">
 				<label for="newOffers">Quiero recibir nuevas ofertas</label><br>
 				</div>
 				<div>
-				<input type="checkbox" id="terminosYCondiciones" required>
-				<label for="terminosYconficiones">Estoy de acuerdo con los <a href="terminosYcondiciones.html">terminos y condiciones</a></label>
+				<input type="checkbox" id="terminosYCondiciones" checked >
+				<label for="terminosYCondiciones">Estoy de acuerdo con los terminos y condiciones</label><br>
 				</div>
-				<button type="button" id="registroDatos" class="btn btn-lg btn-primary btn-block">Siguiente</button>
+				<button type="button" id="registroDatos" class="btn btn-lg btn-primary btn-block" name="registerUser">Siguiente</button>
 				<p id="verificacionEmail" >El correo electronico ya se ha usado</p>
 				<p id="verificacionContrasena">La contraseña tiene que tener longitud minima 6 caracteres</p>
 				<p id="verificacionNick">El nick ya está en uso</p>
-				</form>
-			</div>
-
-
-			<div class="registerNextStep" id="registerNextStep">
-			<form action="View.php">
+				</div>
+				<!--
+				<div class="registerNextStep" id="registerNextStep">
 				<img src="http://www.cyclogen.com/wp-content/uploads/2014/07/perfil-anonimo-160x160.jpg" id="elAvatar" class="img-responsive img-circle avatar" />
 				<input type="text" class="form-control" id="urlImgPerfil" name="urlImgPerfil" placeholder="URL imagen perfil">
 				<div id="seleccionaCiudad">
@@ -80,11 +78,15 @@
 				</div>
 				<input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Código postal" required>
 					  <div class="inner"><button type="button" id="locationButton" class="btn btn-lg btn-primary btn-block"  >Encuentrame!</button></div>
-					  <div class="inner"><button type="submit" class="btn btn-lg btn-primary btn-block" name="registerButton">Registrate</button></div>
 			   		  <input  id="latitude"></input>
 					  <input id="longitude"></input>
+				</div>
+				-->
+			  <div class="inner"><button type="submit" class="btn btn-lg btn-primary btn-block" name="registerUserNextStep">Registrate</button></div>
+
 			</form>
-			</div>
+
+
 
 			<div class="login" name="login" id="login">
 				<input type="text" class="form-control" id="emailOrNick" name="emailOrNick" placeholder="Correo electronico o nick" required ><br>

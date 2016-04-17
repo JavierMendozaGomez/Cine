@@ -1,6 +1,7 @@
 <?php
 require './TransferUser.php';
 require './SAUser.php';
+
 if(isset($_POST['action'])){
 	switch ($_POST['action']) {
         case 'emailValidation':
