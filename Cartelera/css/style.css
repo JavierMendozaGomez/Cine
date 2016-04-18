@@ -108,15 +108,16 @@ Movies
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-width: 130px;
   padding: 8px 18px;
 }
 .movies .movie {
   padding: 10px;
   cursor: pointer;
+
 }
 .movies .movie .poster {
-  width: 100%;
+  width: 300px;
+  height: 445px;
   margin-bottom: 6px;
   border-radius: 4px;
 }
