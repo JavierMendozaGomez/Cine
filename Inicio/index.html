@@ -84,7 +84,8 @@
       <ul class="nav navbar-nav navbar-left">
 
         <li id="enCartelera"><a href="#">En cartelera <span class="sr-only">(current)</span></a></li>
-        <li ><a href="#">Mis entradas</a></li>
+        <li ><a href="#">Juegos</a></li>
+        <li ><a href="#">Series</a></li>
        
       </ul>
       <form class="navbar-form navbar-left" role="search">
@@ -92,17 +93,14 @@
           <input type="text" class="form-control" name="search" id="search" placeholder="Search"  autocomplete="off" list="listOfSearchs">
           <datalist id="listOfSearchs"></datalist>
         </div>
-        <button type="button" class="btn btn-default" id="enviaDatos" >Submit</button>
+        <button type="button" class="btn btn-default" id="enviaDatos" name="enviaDatos">Submit</button>
       </form>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<p id="elparrafo"><p>
-  <br><br><br><br><br><br>
-<div class="app" id="miApp">
+<div class="app">
   <h2>Peliculas</h2>
-  
-
+  <div id="listOfMovies">
   <section class="movies">
     <div class="movie">
       <img src="http://ia.media-imdb.com/images/M/MV5BMTYzMzM4NzI4Ml5BMl5BanBnXkFtZTgwODcxNDg1NjE@._V1_SX300.jpg" alt="" class="poster" />
@@ -149,17 +147,7 @@
       </div>
     </div>
 
-     <div class="movie">
-      <img src="http://ia.media-imdb.com/images/M/MV5BNTE5NzU3MTYzOF5BMl5BanBnXkFtZTgwNTM5NjQxODE@._V1_SX300.jpg" alt="" class="poster" />
-      <div class="title">Batman v Superman: Dawn of Justice</div>
-      <div class="info">
-        <span class="length">151 min</span>
-        <span class="year">2016</span>
-      </div>
-      <div class="desc">
-        Following his titanic struggle against General Zod, Metropolis has been razed to the ground and Superman is the most controversial figure in the world. While for many he is still an emblem of hope, a growing number of people consider him a threat to humanity, seeking justice for the chaos he has brought to Earth. As far as Bruce Wayne is concerned, Superman is clearly a danger to society. He fears for the future of the world with such a reckless power left ungoverned, and so he dons his mask and cape to right Superman's wrongs. The rivalry between them is furious, fueled by bitterness and vengeance, and nothing can dissuade them from waging this war. However, a dark new threat arises in the form of a third man: one who has a power greater than either of them to endanger the world and cause total destruction!
-      </div>
-    </div>
+    
   </section>
 
 
@@ -206,17 +194,6 @@
       <div class="desc">
 On a December morning in 1970, the King of Rock 'n Roll showed up on the lawn of the White House to request a meeting with the most powerful man in the world, President Nixon. Starring Academy Award® nominee Michael Shannon as Elvis Presley and two-time Academy Award® winner Kevin Spacey as Richard Nixon, comes the untold true story behind this revealing, yet humorous moment in the Oval Office forever immortalized in the most requested photograph in the National Archives.      </div>
     </div>
-     <div class="movie">
-      <img src="http://ia.media-imdb.com/images/M/MV5BMjMwNDkzOTU5N15BMl5BanBnXkFtZTgwMjA3MjgyODE@._V1_SX300.jpg" alt="" class="poster" />
-      <div class="title">Compadres</div>
-      <div class="info">
-        <span class="length">156 min</span>
-        <span class="year">2016</span>
-      </div>
-      <div class="desc">
-        A disgruntled Mexican cop is forced to work with a teenage hacker to hunt down the criminals who killed his wife, and dismantle their operation.      </div>
-    </div>
-    <br>
   </section>
 
 
@@ -260,21 +237,16 @@ On a December morning in 1970, the King of Rock 'n Roll showed up on the lawn of
       </div>
       <div class="desc">MIRACLES FROM HEAVEN is based on the incredible true story of the Beam family. When Christy (Jennifer Garner) discovers her 10-year-old daughter Anna (Kylie Rogers) has a rare, incurable disease, she becomes a ferocious advocate for her daughter's healing as she searches for a solution. After Anna has a freak accident, an extraordinary miracle unfolds in the wake of her dramatic rescue that leaves medical specialists mystified, her family restored and their community inspired."  </div>
     </div>
-     <div class="movie">
-      <img src="http://ia.media-imdb.com/images/M/MV5BMjIxNTExMDk4NF5BMl5BanBnXkFtZTgwODM0MDczNzE@._V1_SX300.jpg" alt="" class="poster" />
-      <div class="title">God's Not Dead 2</div>
-      <div class="info">
-        <span class="length">156 min</span>
-        <span class="year">2016</span>
-      </div>
-      <div class="desc">
-        When a high school teacher is asked a question in class about Jesus, her reasoned response lands her in deep trouble and could expel God from the public square once and for all.
-      </div>
-    </div>
-    <br>
+   
   </section>
+</div>
 
-  <div class="detail">
+<h2>Juegos</h2>
+<div id="listOfGames"><section class="movies">
+</div>
+<h2>Series</h2>
+<div id="listOfSeries"><section class="movies">
+</div>  <div class="detail">
     <svg class="close">
       <use xlink:href="#close"></use>
     </svg>
@@ -295,7 +267,7 @@ On a December morning in 1970, the King of Rock 'n Roll showed up on the lawn of
           <g id="Play">
             <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M203.791,99.628L49.307,2.294c-4.567-2.719-10.238-2.266-14.521-2.266   c-17.132,0-17.056,13.227-17.056,16.578v198.94c0,2.833-0.075,16.579,17.056,16.579c4.283,0,9.955,0.451,14.521-2.267   l154.483-97.333c12.68-7.545,10.489-16.449,10.489-16.449S216.471,107.172,203.791,99.628z" fill="#FFFFFF"/>
           </g>
-        </svg> play movie
+        </svg> Read More
       </button>
 
 

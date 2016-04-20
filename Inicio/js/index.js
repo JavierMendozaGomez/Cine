@@ -3,7 +3,18 @@ var $play = $('.play'),
     $movie = $('.movie', $detail),
     $close = $('.close');
 
-$('.movies .movie').click(function(){
+$(document.body).on('click', '.movies .movie', function(){
+   var urlId = "http://www.omdbapi.com/?i="+ $(this).attr('title') +"&plot=full&r=json";
+   var id = "#" + $(this).attr('title');
+    $.ajax({
+            type: "get",
+            url: urlId,
+            async: false,
+            success: function(data) { 
+                 $(id).html(data.Plot);       
+            }
+          });
+
   $movie.html($(this).html());
   $play.appendTo($movie);
 
@@ -20,7 +31,6 @@ $('.movies .movie').click(function(){
     width: $poster.width(),
     height: $poster.height()
   })
-
   $detail.show();
 
   $('.poster', $detail).delay(10).queue(function(next) {
@@ -36,7 +46,7 @@ $('.movies .movie').click(function(){
     });
     next();
   })
-})
+  });
 
 
 /*--------------------
