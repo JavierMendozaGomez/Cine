@@ -164,7 +164,7 @@ $(document).ready(function(){
                                         <span class=\"year\">"+data.Search[i].Year+ "<\/span>\r\n\
                                        <\/div>\r\n\
                                        <div class=\"desc\" id=\""+ data.Search[i].imdbID +"\">\r\n\
-                                        "+ "dataById.Plot" +" <\/div>\r\n\
+                                        "+ "" +" <\/div>\r\n\
                                         <\/div>";
                               }
                           if(contador == 4){

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400'>
+  <link rel="stylesheet" href="css/style.css">
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+  <script src="js/movies.js"></script>
+  <script>
+    $(document).ready(function(){
+      console.log("documento cargado");
+      $("li").mouseover(function(){
+        $(this).addClass('active') ;
+      });
+      $("li").mouseout(function(){
+        $(this).removeClass('active');
+      });
+
+    });
+
+
+    function getSearch(){
+      var searchAux = document.getElementById("search").value;
+      var search="",caracter;
+      for( var i = 0; i < searchAux.length;i++){
+            if(searchAux.charAt(i) == " ")
+              search+="+";
+            else
+              search += searchAux.charAt(i);
+      }
+      return search;
+    }
+  </script>
+
+  <title>
+  Inicio  
+  </title>
+  <style>
+    #logo{
+        max-width: 50px;
+         max-height: 50px;
+         margin-top: -10px
+    }
+    .navbar .navbar-nav {
+      display: inline-block;
+      float: none;
+    }
+  
+    html, body { padding: 0; margin: 0;}
+
+    body { padding: 20px; }
+
+  </style>
+  
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">
+        <img id="logo" alt="Brand" src="http://www.abc.es/Media/201401/31/palomitas--644x442.jpg"></a> </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+
+        <li id="enCartelera"><a href="index.html">En cartelera <span class="sr-only">(current)</span></a></li>
+        <li ><a href="games.html">Juegos</a></li>
+        <li ><a href="series.html">Series</a></li>
+       
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" name="search" id="search" placeholder="Search"  autocomplete="off" list="listOfSearchs">
+          <datalist id="listOfSearchs"></datalist>
+        </div>
+        <button type="button" class="btn btn-default" id="enviaDatos" name="enviaDatos">Submit</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="app">
+  <h2>Peliculas</h2>
+  <div id="listOfMovies">
+   </div>
+<h2>Juegos</h2>
+<div id="listOfGames">
+  <section class="movies">
+  <div class="movie" title="tt5114332">
+                                    <img src="http://ia.media-imdb.com/images/M/MV5BZDU2ZTVkMTMtNzY3Ni00ZWYyLWIzYTktMTc2NmRmM2Q0YzY1XkEyXkFqcGdeQXVyMjYwNDA2MDE@._V1_SX300.jpg" alt="" class="poster">
+                                     <div class="title">Far Cry Primal</div>
+                                     <div class="info">
+                                        <span class="length"></span>
+                                        <span class="year">2016</span>
+                                       </div>
+                                       <div class="desc" id="tt5114332">The game is set in 10,000 BC, in the Stone Age, a time where humans began to use stones to create tools for their daily life, where survival is a daily challenge as tribes come into ...</div>
+                         </div>
+  <div class="movie" title="tt4833394">
+                                    <img src="http://ia.media-imdb.com/images/M/MV5BZDAxNTk4MjItYzY1YS00NjExLTkzOWYtOGZlZWU3NzFkMzUzXkEyXkFqcGdeQXVyMTgwOTE5NDk@._V1_SX300.jpg" alt="" class="poster">
+                                     <div class="title">Pokkén Tournament</div>
+                                     <div class="info">
+                                        <span class="length"></span>
+                                        <span class="year">2015</span>
+                                       </div>
+                                       <div class="desc" id="tt4833394">N/A</div>
+                         </div>
+  
+  <div class="movie" title="tt4844106">
+                                    <img src="http://ia.media-imdb.com/images/M/MV5BMTEzODAyNjE5MjZeQTJeQWpwZ15BbWU4MDY3MjA4MTcx._V1_SX300.jpg" alt="" class="poster">
+                                     <div class="title">Call of Duty: Black Ops III</div>
+                                     <div class="info">
+                                        <span class="length"></span>
+                                        <span class="year">2015</span>
+                                       </div>
+                                       <div class="desc" id="tt4844106">Call of Duty: Black Ops III deploys players into a dark, twisted future where a new breed of Black Ops soldiers emerges and the lines are blurred between our own humanity and the technology we created to stay ahead, in a world where cutting-edge military robotics define warfare. With three unique game modes: Campaign, Multiplayer, and Zombies, providing fans with the deepest and most ambitious Call of Duty ever.</div>
+                                    </div>
+   <div class="movie" title="tt2103188">
+                                    <img src="http://ia.media-imdb.com/images/M/MV5BMzQ0OTExMTQzNl5BMl5BanBnXkFtZTgwODQ0Nzg2MjE@._V1_SX300.jpg" alt="" class="poster">
+                                     <div class="title">Grand Theft Auto V</div>
+                                     <div class="info">
+                                        <span class="length"></span>
+                                        <span class="year">2013</span>
+                                       </div>
+                                       <div class="desc" id="tt2103188">Los Santos: a sprawling sun-soaked metropolis full of self-help gurus, starlets and fading celebrities, once the envy of the Western world, now struggling to stay afloat in an era of economic uncertainty and cheap reality TV. Amidst the turmoil, three very different criminals plot their own chances of survival and success: Franklin, a former street gangster, now looking for real opportunities and serious money; Michael, a professional ex-con whose retirement is a lot less rosy than he hoped it would be; and Trevor, a violent maniac driven by the chance of a cheap high and the next big score. Running out of options, the crew risks everything in a series of daring and dangerous heists that could set them up for life.</div>
+                                    </div>                                 
+  </section>
+
+  <section class="movies">
+  <div class="movie" title="tt3702328">
+                                    <img src="http://ia.media-imdb.com/images/M/MV5BODEzODczNjQ1Ml5BMl5BanBnXkFtZTgwOTY1MDUxNzE@._V1_SX300.jpg" alt="" class="poster">
+                                     <div class="title">Star Wars: Battlefront</div>
+                                     <div class="info">
+                                        <span class="length"></span>
+                                        <span class="year">2015</span>
+                                       </div>
+                                       <div class="desc" id="tt3702328">Join the battle and play an important part in the Star Wars Galaxy. Lead the battle as you fight against the powerful empire in hope to regain freedom for the Galaxy.</div>
+                                        </div>
+  <div class="movie" title="tt0098769">
+                                    <img src="http://ia.media-imdb.com/images/M/MV5BMTc0NTY5MzAwOV5BMl5BanBnXkFtZTcwNTk3MzcyMQ@@._V1_SX300.jpg" alt="" class="poster">
+                                     <div class="title">The Civil War</div>
+                                     <div class="info">
+                                        <span class="length"></span>
+                                        <span class="year">1990</span>
+                                       </div>
+                                       <div class="desc" id="tt0098769">This highly acclaimed mini series traces the course of the U.S. Civil War from the abolitionist movement through all the major battles to the death of President Lincoln and the beginnings of Reconstruction. The story is mostly told in the words of the participants themselves, through their diaries, letters, and Visuals are usually still photographs and illustrations of the time, and the soundtrack is likewise made up of war-era tunes played on period instruments. Several modern-day historians offer periodic comment and insight on the war's causes and events.</div>
+                                        </div>
+  <div class="movie" title="tt1806234">
+                                    <img src="http://ia.media-imdb.com/images/M/MV5BMTMyMDI0MDI3M15BMl5BanBnXkFtZTcwMTQ5NDQ3NA@@._V1_SX300.jpg" alt="" class="poster">
+                                     <div class="title">Human Planet</div>
+                                     <div class="info">
+                                        <span class="length"></span>
+                                        <span class="year">2011</span>
+                                       </div>
+                                       <div class="desc" id="tt1806234">Like all life forms, humanity partially adapts to types of natural environment, yet also tends to change them. Each episode examines how life differs for men and nature in some type of environment, from Arctic to desert and jungle, from coasts to mountains.</div>
+                                    </div>
+  <div class="movie" title="tt2372162">
+                                    <img src="http://ia.media-imdb.com/images/M/MV5BMjMzMjAxNDY5MV5BMl5BanBnXkFtZTgwMzAzNTQxODE@._V1_SX300.jpg" alt="" class="poster">
+                                     <div class="title">Orange Is the New Black</div>
+                                     <div class="info">
+                                        <span class="length"></span>
+                                        <span class="year">2013–</span>
+                                       </div>
+                                       <div class="desc" id="tt2372162">The story of Piper Chapman, a woman in her thirties who is sentenced to fifteen months in prison after being convicted of a decade-old crime of transporting money to her drug-dealing girlfriend.</div>
+                                        </div>  
+  </section>
+    <section class="movies">
+    <div class="movie" title="tt1856010">
+                                    <img src="http://ia.media-imdb.com/images/M/MV5BMjM3ODMyMjc3MV5BMl5BanBnXkFtZTgwNDgzNDc5NzE@._V1_SX300.jpg" alt="" class="poster">
+                                     <div class="title">House of Cards</div>
+                                     <div class="info">
+                                        <span class="length"></span>
+                                        <span class="year">2013–</span>
+                                       </div>
+                                       <div class="desc" id="tt1856010">Majority House Whip Francis Underwood takes you on a long journey as he exacts his vengeance on those he feels wronged him - that is, his own cabinet members including the President of the United States himself. Dashing, cunning, methodical and vicious, Frank Underwood along with his equally manipulative yet ambiguous wife, Claire take Washington by storm through climbing the hierarchical ladder to power in this Americanized recreation of the BBC series of the same name.</div>
+                                        </div>
+    <div class="movie" title="tt0098936">
+                                    <img src="http://ia.media-imdb.com/images/M/MV5BMTExNzk2NjcxNTNeQTJeQWpwZ15BbWU4MDcxOTczOTIx._V1_SX300.jpg" alt="" class="poster">
+                                     <div class="title">Twin Peaks</div>
+                                     <div class="info">
+                                        <span class="length"></span>
+                                        <span class="year">1990–1991</span>
+                                       </div>
+                                       <div class="desc" id="tt0098936">The body of a young girl (Laura Palmer) is washed up on a beach near the small Washington state town of Twin Peaks. FBI Special Agent Dale Cooper is called in to investigate her strange demise only to uncover a web of mystery that ultimately leads him deep into the heart of the surrounding woodland and his very own soul.</div>
+                                        </div>
+    <div class="movie" title="tt2707408">
+                                    <img src="http://ia.media-imdb.com/images/M/MV5BMjMyNzA0MTA3NV5BMl5BanBnXkFtZTgwMTYxMTA0NjE@._V1_SX300.jpg" alt="" class="poster">
+                                     <div class="title">Narcos</div>
+                                     <div class="info">
+                                        <span class="length"></span>
+                                        <span class="year">2015–</span>
+                                       </div>
+                                       <div class="desc" id="tt2707408">Narcos tells the true-life story of the growth and spread of cocaine drug cartels across the globe and attendant efforts of law enforcement to meet them head on in brutal, bloody conflict. It centers around the notorious Colombian cocaine kingpin Pablo Escobar (Wagner Moura) and Steve Murphy (Holbrook), a DEA agent sent to Colombia on a U.S. mission to capture and ultimately kill him.</div>
+                                       </div>   
+    <div class="movie" title="tt0773262">
+                                    <img src="http://ia.media-imdb.com/images/M/MV5BMTM5MjkwMTI0MV5BMl5BanBnXkFtZTcwODQwMTc0OQ@@._V1_SX300.jpg" alt="" class="poster">
+                                     <div class="title">Dexter</div>
+                                     <div class="info">
+                                        <span class="length"></span>
+                                        <span class="year">2006–2013</span>
+                                       </div>
+                                       <div class="desc" id="tt0773262">Dexter Morgan is a Forensics Expert, a loyal brother, boyfriend, and friend. That's what he seems to be, but that's not what he really is. Dexter Morgan is a Serial Killer that hunts the bad.</div>
+                                        </div>                                 
+  </section>
+</div>  
+<h2>Series</h2>
+<div id="listOfSeries">
+</div>
+<div class="detail">
+    <svg class="close">
+      <use xlink:href="#close"></use>
+    </svg>
+    <div class="movie">
+
+      <img src="http://movium.io/data/posters/eqFckcHuFCT1FrzLOAvXBb4jHwq.jpg" alt="" class="poster" />
+      <div class="title">Room</div>
+      <div class="info">
+        <span class="length">117 min</span>
+        <span class="year">2015</span>
+      </div>
+      <div class="desc">
+        Jack is a young boy of 5 years old who has lived all his life in one room. He believes everything within it are the only real things in the world. But what will happen when his Ma suddenly tells him that there are other things outside of Room?
+      </div>
+
+      <button class="play">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 232.153 232.153" style="enable-background:new 0 0 232.153 232.153;" xml:space="preserve" width="10px" height="10px">
+          <g id="Play">
+            <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M203.791,99.628L49.307,2.294c-4.567-2.719-10.238-2.266-14.521-2.266   c-17.132,0-17.056,13.227-17.056,16.578v198.94c0,2.833-0.075,16.579,17.056,16.579c4.283,0,9.955,0.451,14.521-2.267   l154.483-97.333c12.68-7.545,10.489-16.449,10.489-16.449S216.471,107.172,203.791,99.628z" fill="#FFFFFF"/>
+          </g>
+        </svg> Read More
+      </button>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Icons -->
+<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none;">
+  <symbol id="close" viewBox="0 0 212.982 212.982">
+    <g>
+      <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312   c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312   l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937   c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z" fill="#525661"/>
+    </g>
+  </symbol>
+  <symbol id="ico-search">
+    <path fill-rule="evenodd" clip-rule="evenodd" fill="#363a47" d="M14.769,14.769c-0.342,0.342-0.896,0.342-1.237,0l-3.756-3.756
+                                                                    c-2.399,1.793-5.801,1.623-7.981-0.557c-2.392-2.392-2.392-6.271,0-8.663s6.271-2.392,8.662,0c2.18,2.181,2.35,5.583,0.557,7.981
+                                                                    l3.756,3.756C15.11,13.873,15.11,14.427,14.769,14.769z M9.219,3.032c-1.709-1.709-4.479-1.709-6.188,0
+                                                                    c-1.708,1.708-1.708,4.479,0,6.188c1.709,1.708,4.479,1.708,6.188,0C10.927,7.51,10.927,4.74,9.219,3.032z"/>
+  </symbol>
+</svg>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+
+        <script src="js/index.js"></script>
+</body>
+</html>
