@@ -256,7 +256,20 @@ $(document).ready(function(){
                       }
                     
               });
-        });      
+
+            if($("#listOfMovies").is(":empty")) 
+                $("#listOfMovies").css("display", "none");
+            else
+                $("#listOfMovies").css("display", "block");
+            if($("#listOfGames").is(":empty"))
+                  $("#listOfGames").css("display", "none");
+            else
+                  $("#listOfGames").css("display", "block");
+            if($('#listOfSeries').is(':empty'))
+                $("#listOfSeries").css("display", "none");
+            else
+                $("#listOfSeries").css("display", "block");
+                });      
     });
     $('#search').keypress(function (e) {
      var key = e.which;
