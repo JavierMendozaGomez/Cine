@@ -74,24 +74,6 @@ $(document).ready(function(){
      }        
     });
   });
-    /*
-    $('#search').keypress(function (e) {
-     var key = e.which;
-     if(key == 13)  // the enter key code
-      {
-          $("#enviaDatos").click();       
-          return false;  
-      }
-    }); 
-
-     $('#year').keypress(function (e) {
-     var key = e.which;
-     if(key == 13)  // the enter key code
-      {
-          $("#enviaDatos").click();       
-          return false;  
-      }
-    });  */ 
   
 function getHtml(typeOfSearch){
   url = "http://www.omdbapi.com/?s="+ getSearch()+"&y=&plot=short&r=json&type=" + typeOfSearch; /*El tipo de búsqueda, videojuego, pelicula,serie*/

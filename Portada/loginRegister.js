@@ -136,6 +136,21 @@ function getLocation() {
 				});
 
 				$("#loginNextStepButton").click(function(){
+					$.ajax({
+						type: "post",
+						url:'ValidationForm.php',
+						data: {'action':'emailorNickValidation','emailorNick': $("#emailorNick").val()},
+						success: function(result) {
+							if(result == "true"){
+								$("#nick").css('border', $colorError);
+								$("#verificacionNick").slideDown();
+							}
+							else{
+								$("#nick").css('border', $colorOk);
+								$("#verificacionNick").slideUp();
+							}
+						}
+					});
 				});
 
 				$("#urlImgPerfil").blur(function(){

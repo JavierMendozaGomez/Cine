@@ -26,10 +26,10 @@ if(isset($_POST["loginUser"])){
 	$tUsuario->setNick($_POST["emailorNick"]);
 	$tUsuario = loginUser($tUsuario);
 	if($tUsuario != null){
-		$tUsuario->imprime();
+		echo json_encode($tUsuario);
 	}
 	else{
-		echo "No existe esa cuenta wn";
+		echo "false";
 	}
 }
 ?>
