@@ -1,4 +1,4 @@
-/*--------------------
+d/*--------------------
 Body
 --------------------*/
 *,
@@ -138,7 +138,7 @@ Detail
 --------------------*/
 .detail {
   position: fixed;
-  top: 50%;
+  top: 20%;
   left: 10%;
   width: 80%;
   height: 80%;
@@ -275,4 +275,7 @@ Detail
 .detail.ready .play {
   -webkit-transition-delay: .5s;
           transition-delay: .5s;
+}
+.btn:focus {
+  outline: none;
 }
