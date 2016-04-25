@@ -1,98 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-  
-
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400'>
-  <link rel="stylesheet" href="css/style.css">
-
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
-  <script src="js/movies.js"></script>
- 
-
+ <?php include 'css&js.php' ?>
   <title>
   Inicio  
   </title>
-  <style>
-    #logo{
-        max-width: 50px;
-         max-height: 50px;
-         margin-top: -10px
-    }
-    .navbar .navbar-nav {
-      display: inline-block;
-      float: none;
-    }
-  
-    html, body { padding: 0; margin: 0;}
-
-    body { padding: 20px; }
-
-  </style>
-  
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">
-        <img id="logo" alt="Brand" src="http://www.abc.es/Media/201401/31/palomitas--644x442.jpg"></a> </div>
+<?php include 'header.php' ?>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-left">
-
-        <li ><a href="index.html">In Theaters <span class="sr-only">(current)</span></a></li>
-        <li ><a href="games.html">Games</a></li>
-        <li ><a href="series.html">Series</a></li>
-       
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" name="search" id="search" placeholder="Search"  autocomplete="off" list="listOfSearchs">
-          <datalist id="listOfSearchs"></datalist>
-        </div>
-        <button type="button" class="btn btn-default" id="enviaDatos" name="enviaDatos">Submit</button>
-        <button type="button" class="btn btn-default" id="advanceButton">Advance</button>
-        <div id="advanceSearch" hidden>
-                <br>
-                <h3>Advance Search</h3>
-                <br>
-                <label >
-                    <input type="radio" id="movieRadio" name="typeOfSearch" value="movie" /> Movies
-                </label> 
-                <label >
-                    <input type="radio" id="gameRadio" name="typeOfSearch" value="game" /> Games
-                </label> 
-                <label >
-                    <input type="radio" id="seriesRadio" name="typeOfSearch" value="series"/> Series
-                </label> 
-                <label >
-                    <input type="radio" id="noneRadio" name="typeOfSearch" value="none" checked="checked"  /> I don't care 
-                </label> 
-                <input type="text" class="form-control" name="year" id="year" placeholder="Year"/>
-                </div>
-      </form>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
 <div class="app">
     <h2 id="withoutResults" hidden>No se ha encontrado ningún resultado</h2></br>
   <h2 id="tituloPeliculas" hidden>Peliculas</h2>

@@ -1,3 +1,3 @@
-A Pen created at CodePen.io. You can find this one at http://codepen.io/supah/pen/WwoYjO.
+A Pen created at CodePen.io. You can find this one at http://codepen.io/AndrewBaker/pen/lGgrw.
 
- https://dailyui.co/ #025
+ Here is a side bar by Andrew M.
