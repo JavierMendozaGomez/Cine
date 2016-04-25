@@ -10,6 +10,9 @@ if(isset($_POST['action'])){
         case 'nickValidation':
             nickValidation();
             break;
+        case 'emailorNickValidation':
+        	emailorNickValidation();
+        	break;
     }
 }
 
@@ -40,12 +43,23 @@ function emailorNickValidation(){
 	$tUsuario = new TransferUser();
 	$tUsuario->setNick($_POST['emailOrNick']);
 	$tUsuario->setEmail($_POST['emailOrNick']);
-	$tUsuario = readUserByNickSA($tUsuario);
-	if($tUsuario != null){
-		echo "true";
+	$tUsuarioAux = readUserByNickSA($tUsuario);
+	if($tUsuarioAux != null){
+		echo json_encode($tUsuarioAux);
 	}
 	else{
-		echo "false";
+		$tUsuario = readUserByEmailSA($tUsuario);
+		if($tUsuario != null)
+			echo json_encode($tUsuario);
+		else
+			echo "false";
+		
+		}
 	}
-	}
+function passwordValidation(){
+	$tUsuario = new TransferUser();
+	$tUsuario->setNick($_POST['emailOrNick']);
+	$tUsuario->setEmail($_POST['emailOrNick']);
+	$tUsuario = readUserByNickSA($tUsuario);
+}
 ?>

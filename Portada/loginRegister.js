@@ -139,15 +139,17 @@ function getLocation() {
 					$.ajax({
 						type: "post",
 						url:'ValidationForm.php',
-						data: {'action':'emailorNickValidation','emailorNick': $("#emailorNick").val()},
+						data: {'action':'emailorNickValidation','emailOrNick': $("#emailOrNick").val()},
 						success: function(result) {
-							if(result == "true"){
-								$("#nick").css('border', $colorError);
-								$("#verificacionNick").slideDown();
+							if(result == "false"){
+								$("#emailOrNick").css('border', $colorError);
+								$("#verificacionEmailOrNick").slideDown();
 							}
 							else{
-								$("#nick").css('border', $colorOk);
-								$("#verificacionNick").slideUp();
+              					var parsed = JSON.parse(result);
+								$("#login").toggle( "slide" );
+								$("#loginNextStep").toggle( "slide" )
+								$("#avatarLogin").attr('src',parsed.img);
 							}
 						}
 					});

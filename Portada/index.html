@@ -1,6 +1,6 @@
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -39,7 +39,7 @@
 				<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" title="(La contraseña debe tener al menos 6 caracteres)"
 				required onblur="myFunction()">
 
-				<input type="text" class="form-control" id="nick" name="nick" placeholder="Nick" required value="weqqqqqqqqqqqq">
+				<input type="text" class="form-control" id="nick" name="nick" placeholder="Nick" required value="">
 
 				<div>
 				<input type="checkbox" checked name="newOffers" id="newOffers">
@@ -91,9 +91,14 @@
 			<div class="login" name="login" id="login">
 				<input type="text" class="form-control" id="emailOrNick" name="emailOrNick" placeholder="Correo electronico o nick" required ><br>
 				<button type="button" class="btn btn-lg btn-primary btn-block" id="loginNextStepButton">Siguiente</button>
+				<p id="verificacionEmailOrNick" hidden></br>No existe ningún usuario con ese email o nick</p>
 			</div>
 
-			<div class="loginNextStep" id="loginNextStep"></div>
+			<div class="loginNextStep" id="loginNextStep" hidden>
+				<img src="http://www.cyclogen.com/wp-content/uploads/2014/07/perfil-anonimo-160x160.jpg" id="avatarLogin" class="img-responsive img-circle avatar" /><br>
+				<input type="text" class="form-control" id="passwordLogin" name="contraseña" placeholder="contraseña" required value="">
+				<button type="button" class="btn btn-lg btn-primary btn-block" id="loginUser">Login</button>
+			</div>
 			
 			<div class="registerOrLogin" id="registerOrLogin">
 				<button type="button" class="btn btn-lg btn-primary btn-block" id="loginButton">Iniciar sesión</button>

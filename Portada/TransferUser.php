@@ -79,6 +79,7 @@ class TransferUser{
 		echo $this->contrasena."</br>";
 		echo $this->nick."</br>";
 		echo $this->newOffers."</br>";
+		echo $this->img;
 	}
 }
 ?>
