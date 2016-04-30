@@ -14,6 +14,15 @@
 			border: none;
 		}
 	</style>
+	<script>
+	$(document).ready(function(){
+		if(<?php echo $_SESSION['newOffers'] ?> == true){
+			 $("#cellOffersYes").prop("checked", true) 
+			}
+		else
+			 $("#cellOffersYes").prop("checked", false) 
+	   });	
+	 </script>
 </head>
 <body>
 <?php include 'header.php' ?>
@@ -34,22 +43,22 @@
 			<tbody>
 				<tr>
 				<th scope="row">Nick</th>
-				<td><input type="text" id="cellNick" value="Javier"></td>
+				<td><input type="text" id="cellNick" value="<?php echo $_SESSION['nick'];?>"></td>
 				</tr>
 
 				<tr>
 				<th scope="row">E-mail</th>
-				<td><input type="email" id="cellEmail" value="mendozarqqq@gmail.com"></td>
+				<td><input type="email" id="cellEmail" value="<?php echo $_SESSION['email'];?>"></td>
 				</tr>
 				
 				<tr>
 				<th scope="row">Password</th>
-				<td><input type="password" id="cellPassword" value="*******"></td>
+				<td><input type="password" id="cellPassword" value="******"></td>
 				</tr>
 
 				<tr>
 				<th scope="row">URL profile image</th>
-				<td><input type="text" id="cellUrl" value="www.google.es"></td>
+				<td><input type="text" id="cellUrl" value="<?php echo $_SESSION['urlImg'];?>"></td>
 				</tr>
 
 				<tr>
@@ -59,14 +68,14 @@
 
 				<tr>
 				<th scope="row">City</th>
-				<td><input type="text" id="cellCity" value="Madrid"></td>
+				<td><input type="text" id="cellCity" value="<?php echo $_SESSION['city'];?>"></td>
 				</tr>
 				<tr>
 
 				<th scope="row">New Offers?</th>
 				<td>
 					<div class="radio">
-					  <label><input type="radio" id="cellOffersYes" name="optradio" checked>Yes</label>
+					  <label><input type="radio" id="cellOffersYes" name="optradio" >Yes</label>
 					</div>
 					<div class="radio">
 					  <label><input type="radio" id="cellOffersNo" name="optradio">No</label>

@@ -154,6 +154,9 @@ function getLocation() {
 						}
 					});
 				});
+				$("#loginUserButton").click(function(){
+					compruebaContrasena();
+					});
 
 				$("#urlImgPerfil").blur(function(){
 					if($("#urlImgPerfil").val() != "")
@@ -188,6 +191,22 @@ function getLocation() {
 
 
 		});
+function compruebaContrasena(){
+				$.ajax({
+						type: "post",
+						url:'ValidationForm.php',
+						data: {'action':'passwordValidation','emailOrNick': $("#emailOrNick").val(), 'passwordLogin': $("#passwordLogin").val()},
+						success: function(result) {
+							if(result == "false"){
+								$("#passwordLogin").css('border', $colorError);
+								$("#verificacionPassword").slideDown();
+							}
+							else{
+								location.href = "../Inicio/index.php";
+							}
+						}
+					});	
+}
 
 
 		

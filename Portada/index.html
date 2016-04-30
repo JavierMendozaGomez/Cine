@@ -33,7 +33,7 @@
 
 <div id="fullpage">
 	<div  class="section register" id="section0">
-			<form method="post" action="View.php">
+			<form method="post" action="Register.php">
 			<div class="formularioRegistro" name="formularioRegistro" id="formularioRegistro">
 				<input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico" required >
 				<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" title="(La contraseña debe tener al menos 6 caracteres)"
@@ -97,7 +97,9 @@
 			<div class="loginNextStep" id="loginNextStep" hidden>
 				<img src="http://www.cyclogen.com/wp-content/uploads/2014/07/perfil-anonimo-160x160.jpg" id="avatarLogin" class="img-responsive img-circle avatar" /><br>
 				<input type="text" class="form-control" id="passwordLogin" name="contraseña" placeholder="contraseña" required value="">
-				<button type="button" class="btn btn-lg btn-primary btn-block" id="loginUser">Login</button>
+				<button type="button" class="btn btn-lg btn-primary btn-block" id="loginUserButton">Iniciar sesion</button>
+				<p id="verificacionPassword" hidden></br>Contraseña incorrecta</p>
+
 			</div>
 			
 			<div class="registerOrLogin" id="registerOrLogin">

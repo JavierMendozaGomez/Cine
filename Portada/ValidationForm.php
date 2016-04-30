@@ -13,6 +13,10 @@ if(isset($_POST['action'])){
         case 'emailorNickValidation':
         	emailorNickValidation();
         	break;
+        case 'passwordValidation':
+        	passwordValidation();
+        	  	break;
+
     }
 }
 
@@ -60,6 +64,39 @@ function passwordValidation(){
 	$tUsuario = new TransferUser();
 	$tUsuario->setNick($_POST['emailOrNick']);
 	$tUsuario->setEmail($_POST['emailOrNick']);
-	$tUsuario = readUserByNickSA($tUsuario);
-}
+	$tUsuarioAux = readUserByNickSA($tUsuario);
+	$passChecked = $_POST['passwordLogin'];
+	if($tUsuarioAux != null){
+		if (strcmp($tUsuarioAux->getPassword(), $passChecked) !== 0) {
+			echo "false";
+		}
+		else {
+			session_start();
+			$_SESSION['nick'] = $tUsuarioAux->getNick();
+			$_SESSION['urlImg'] = $tUsuarioAux->getImage();
+			$_SESSION['email'] = $tUsuarioAux->getEmail();
+			$_SESSION['city'] = $tUsuarioAux->getCity();
+			$_SESSION['newOffers'] = $tUsuarioAux->getNewOffers();
+			$_SESSION['myPassword'] = $tUsuario->getPassword();
+
+			echo "true";
+			 }
+	}
+	else{
+		$tUsuario = readUserByEmailSA($tUsuario);
+		if (strcmp($tUsuario->getPassword(), $passChecked) !== 0) {
+			echo "false";
+		}
+		else{
+			session_start();
+			$_SESSION['nick'] = $tUsuario->getNick();
+			$_SESSION['urlImg'] = $tUsuario->getImage();
+			$_SESSION['email'] = $tUsuario->getEmail();
+			$_SESSION['city'] = $tUsuario->getCity();
+			$_SESSION['myPassword'] = $tUsuario->getPassword();
+			$_SESSION['newOffers'] = $tUsuario->getNewOffers();
+			echo "true";
+		}
+		}
+	}
 ?>

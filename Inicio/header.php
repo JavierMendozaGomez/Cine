@@ -1,3 +1,16 @@
+<?php
+   /* if(!isset($_SESSION)) 
+    { 
+     session_start(); 
+     }*/
+?> 
+<script>
+$(document).ready(function(){
+  $("#logout").click(function(){
+    window.location.href = "logout.php";
+    });
+  });
+ </script>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -19,7 +32,7 @@
         <li ><a href="games.php">Games</a></li>
         <li ><a href="series.php">Series</a></li>
         <li><a href="myAccount.php">My Profile</a></li>
-
+        
         <br><br>
       </ul>
       <form class="navbar-form navbar-left" role="search">
@@ -46,9 +59,12 @@
                     <input type="radio" id="noneRadio" name="typeOfSearch" value="none" checked="checked"  /> I don't care 
                 </label> 
                 <input type="text" class="form-control" name="year" id="year" placeholder="Year"/>
-                </div>
+        </div>
       </form>
-      
+      <div     style="display: inline-block;">
+      <img src= "<?php echo $_SESSION['urlImg']; ?>" class="img-responsive img-circle smallAvatar"/>
+       <button type="button" class="btn btn-default" id="logout" name="logout">Logout</button>
+      </div>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

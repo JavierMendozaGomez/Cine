@@ -7,12 +7,42 @@
 	</title>
 </head>
 <body>
+
 <?php include 'header.php' ?>
 
-<div class="container-fluid">
+<div class="container-fluid" style="background-color: white";
+>
  <div class="row">
    <div class=".col-xs-12 .col-md-8">
+    <p>Peliculas</p>
+    <div class="myContainer">
+        <img src="http://ia.media-imdb.com/images/M/MV5BMTYzMzM4NzI4Ml5BMl5BanBnXkFtZTgwODcxNDg1NjE@._V1_SX300.jpg" class="size-1" />
+        <div clas="title">sadddadd</div>
+    </div>
+    <div class="myContainer">
+        <img src="http://farm8.staticflickr.com/7307/16418106076_c4fbbe9ef7_b.jpg" class="size-2" />
+    </div>
+    <div class="myContainer">
+        <img src="http://farm8.staticflickr.com/7307/16418106076_c4fbbe9ef7_b.jpg" class="size-3" />
+    </div>
+    <div class="span4">
+    <div class="myContainer">
+        <img src="http://farm8.staticflickr.com/7307/16418106076_c4fbbe9ef7_b.jpg" class="size-4" />
+            <h2>sqwsqqqawwwwwwwwwwws</h2>
 
+    </div>
+        </div>
+    <div class="myContainer">
+        <img src="http://farm8.staticflickr.com/7307/16418106076_c4fbbe9ef7_b.jpg" class="size-5" />
+    </div>
+    <div class="myContainer">
+        <img src="http://farm8.staticflickr.com/7307/16418106076_c4fbbe9ef7_b.jpg" class="size-6" />
+    </div>
+</div>
+  </div>
+</div>
+</div>
+<!--
 <div class="app">
   <h2 id="withoutResults" hidden>No se ha encontrado ningún resultado</h2></br>
   <h2 id="tituloPeliculas">Peliculas</h2>
@@ -192,8 +222,8 @@ On a December morning in 1970, the King of Rock 'n Roll showed up on the lawn of
 </div>
 </div>
   
-
-<!-- Icons -->
+--><!-- Icons -->
+<!--
 <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none;">
   <symbol id="close" viewBox="0 0 212.982 212.982">
     <g>
@@ -211,5 +241,6 @@ On a December morning in 1970, the King of Rock 'n Roll showed up on the lawn of
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
 
         <script src="js/index.js"></script>
+-->
 </body>
-</html>
+</html> 

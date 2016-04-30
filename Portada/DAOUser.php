@@ -5,10 +5,12 @@ function readByName(){
 }
 function registerUserDAO($TUser, $conn){
 	$sql = "INSERT INTO USER(email,contrasena,nick,newOffers,image,city,postalCode) VALUES ('".$TUser->getEmail()."', '".$TUser->getPassword()."', '".$TUser->getNick()."', ".$TUser->getNewOffers().", '".$TUser->getImage()."', '".$TUser->getCity()."', '".$TUser->getPostalCode()."')";
-	if($conn->query($sql) === TRUE)
+	if($conn->query($sql) === TRUE){
 		return TRUE;
-	else
+	}
+	else{
 		return FALSE;
+	}
 }
 function readByIDDAO(){
 

@@ -1,8 +1,7 @@
 <?php
 require './TransferUser.php';
 require './SAUser.php';
-
-if(isset($_POST["registerUser"])){
+	 session_start();
 	$tUsuario = new TransferUser();
 	$tUsuario->setEmail($_POST["email"]);
 	$tUsuario->setPassword($_POST["contrasena"]);
@@ -18,18 +17,11 @@ if(isset($_POST["registerUser"])){
 	$tUsuario->setCity($_POST["city"]);
 	$tUsuario->setPostalCode($_POST["postalCode"]);
 	registerUserSA($tUsuario);
-	echo "usuario Registrado";
-}
-if(isset($_POST["loginUser"])){
-	$tUsuario = new TransferUser();
-	$tUsuario->setEmail($_POST["emailorNick"]);
-	$tUsuario->setNick($_POST["emailorNick"]);
-	$tUsuario = loginUser($tUsuario);
-	if($tUsuario != null){
-		echo json_encode($tUsuario);
-	}
-	else{
-		echo "false";
-	}
-}
+	$_SESSION['nick'] = $tUsuario->getNick();
+	$_SESSION['urlImg'] = $tUsuario->getImage();
+	$_SESSION['myPassword'] = $tUsuario->getPassword();
+	$_SESSION['email'] = $tUsuario->getEmail();
+	$_SESSION['city'] = $tUsuario->getCity();
+	$_SESSION['newOffers'] = $tUsuario->getNewOffers();
+	header("Location: ../Inicio/index.php");
 ?>
