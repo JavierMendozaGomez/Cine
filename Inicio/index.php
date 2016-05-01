@@ -160,7 +160,7 @@ On a December morning in 1970, the King of Rock 'n Roll showed up on the lawn of
 </div>
 <h2 id="tituloSeries" hidden>Series</h2>
 <div id="listOfSeries"><section class="movies">
-</div>  <div class="detail">
+</div>  <div class="detail" id="detailsOfMedia">
     <svg class="close">
       <use xlink:href="#close"></use>
     </svg>
@@ -176,7 +176,7 @@ On a December morning in 1970, the King of Rock 'n Roll showed up on the lawn of
         Jack is a young boy of 5 years old who has lived all his life in one room. He believes everything within it are the only real things in the world. But what will happen when his Ma suddenly tells him that there are other things outside of Room?
       </div>
 
-      <button class="play">
+      <button class="play" id="buttonPlay" onclick="showMoreInfo()" >
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 232.153 232.153" style="enable-background:new 0 0 232.153 232.153;" xml:space="preserve" width="10px" height="10px">
           <g id="Play">
             <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M203.791,99.628L49.307,2.294c-4.567-2.719-10.238-2.266-14.521-2.266   c-17.132,0-17.056,13.227-17.056,16.578v198.94c0,2.833-0.075,16.579,17.056,16.579c4.283,0,9.955,0.451,14.521-2.267   l154.483-97.333c12.68-7.545,10.489-16.449,10.489-16.449S216.471,107.172,203.791,99.628z" fill="#FFFFFF"/>

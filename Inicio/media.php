@@ -30,8 +30,7 @@
 		    o.style.height = (25+o.scrollHeight)+"px";
 		}
 	$(document).ready(function(){
-		<?php $id="tt2597398"?>
-		var url = "http://www.omdbapi.com/?i=<?php echo $id; ?>&plot=full&r=json";
+		var url = "http://www.omdbapi.com/?i=<?php echo $_GET["id"]; ?>&plot=full&r=json";
 		$.ajax({
                           type: "get",
                           url: url,
@@ -65,7 +64,8 @@
 			<tbody>
 				<tr>
 				<th scope="row">Title</th>
-				<td><input type="text" id="cellTitle"  disabled></td>
+				<td><textarea  row=1 cols="50" id="cellTitle" disabled onchange="textAreaAdjust(this)">
+				</textarea></td>
 				</tr>
 
 				<tr>

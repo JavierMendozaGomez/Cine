@@ -16,6 +16,7 @@ $(document.body).on('click', '.movies .movie', function(){
           });
 
   $movie.html($(this).html());
+  $movie.append("<div id=\"mediaId\" hidden>"+ $(this).attr('title') + " </div>");
   $play.appendTo($movie);
 
   $poster = $('.poster', this).addClass('active');

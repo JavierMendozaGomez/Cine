@@ -73,10 +73,11 @@ $(document).ready(function(){
           return false;  
      }        
     });
-
-   
+    $("#buttonPlay").click(function() {
+      alert("nooo");
+        });
   });
-  
+
 function getHtml(typeOfSearch){
   url = "http://www.omdbapi.com/?s="+ getSearch()+"&y=&plot=short&r=json&type=" + typeOfSearch; /*El tipo de búsqueda, videojuego, pelicula,serie*/
   var html ="";
@@ -235,3 +236,7 @@ function getAdvanceHTML(typeOfSearch){
       return search.trim();
     }
 
+function showMoreInfo(){
+  var id = $("#mediaId").html();
+  location.href = "media.php?id="+id;
+}
