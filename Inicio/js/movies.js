@@ -73,6 +73,8 @@ $(document).ready(function(){
           return false;  
      }        
     });
+
+   
   });
   
 function getHtml(typeOfSearch){
@@ -232,3 +234,4 @@ function getAdvanceHTML(typeOfSearch){
 
       return search.trim();
     }
+

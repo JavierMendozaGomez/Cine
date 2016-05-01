@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <?php include 'css&js.php' ?>
+ <?php include 'cssAndjs.php' ?>
 	<title>
 	Inicio	
 	</title>

@@ -47,3 +47,21 @@
     		display: block;
     		margin: 0 auto;
 		}
+
+		.media{
+			margin-top: 10%;
+			margin-bottom: 10%;
+		}
+		.media img{
+				margin-top: 10%;
+				margin-left: 10%;
+
+		}
+		.media-info{
+				margin-top: 10%;
+				margin-right: 20%;
+		}
+		
+		#favouriteButton{
+			margin-bottom: 3%;
+		}

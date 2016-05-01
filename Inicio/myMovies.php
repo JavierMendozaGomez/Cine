@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>My profile</title>
-	 <?php include 'css&js.php' ?>
+ <?php include 'cssAndjs.php' ?>
      <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
           <link rel="stylesheet" href="css/SideBarStyle.css">
 
