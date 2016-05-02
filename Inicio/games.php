@@ -11,9 +11,9 @@
 
 <div class="app">
     <h2 id="withoutResults" hidden>No se ha encontrado ningún resultado</h2></br>
-  <h2 id="tituloPeliculas" hidden>Peliculas</h2>
-  <div id="listOfMovies">
-   </div>
+    <h2 id="tituloPeliculas" hidden>Peliculas</h2>
+    <div id="listOfMovies">
+</div>
 <h2 id="tituloJuegos">Juegos</h2>
 <div id="listOfGames">
   <section class="movies">

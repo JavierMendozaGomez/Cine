@@ -53,8 +53,11 @@
 			margin-bottom: 10%;
 		}
 		.media img{
-				margin-top: 10%;
+				margin-top: 20%;
 				margin-left: 10%;
+				height: 445px;
+				width: 300px;
+
 
 		}
 		.media-info{
@@ -63,5 +66,5 @@
 		}
 		
 		#favouriteButton{
-			margin-bottom: 3%;
+			margin-bottom: 1%;
 		}

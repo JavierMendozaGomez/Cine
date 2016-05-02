@@ -15,6 +15,53 @@ $(document.body).on('click', '.movies .movie', function(){
             }
           });
 
+
+  $movie.html($(this).html());
+  $movie.append("<div id=\"mediaId\" hidden>"+ $(this).attr('title') + " </div>");
+  $play.appendTo($movie);
+
+  $poster = $('.poster', this).addClass('active');
+
+  $('.poster', $detail).css({
+    top: $poster.position().top,
+    left: $poster.position().left,
+    width: $poster.width(),
+    height: $poster.height()
+  }).data({
+    top: $poster.position().top,
+    left: $poster.position().left,
+    width: $poster.width(),
+    height: $poster.height()
+  })
+  $detail.show();
+
+  $('.poster', $detail).delay(10).queue(function(next) {
+    $detail.addClass('ready');
+
+    next();
+  }).delay(100).queue(function(next){
+    $(this).css({
+      top: '-10%',
+      left: '-6%',
+      width: 266,
+      height: 400
+    });
+    next();
+  })
+  });
+$(document).on('click', '.movies .movie', function(){
+   var urlId = "http://www.omdbapi.com/?i="+ $(this).attr('title') +"&plot=full&r=json";
+   var id = "#" + $(this).attr('title');
+    $.ajax({
+            type: "get",
+            url: urlId,
+            async: false,
+            success: function(data) { 
+                 $(id).html(data.Plot);       
+            }
+          });
+
+
   $movie.html($(this).html());
   $movie.append("<div id=\"mediaId\" hidden>"+ $(this).attr('title') + " </div>");
   $play.appendTo($movie);
