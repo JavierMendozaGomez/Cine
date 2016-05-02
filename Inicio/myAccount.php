@@ -13,6 +13,7 @@
 		.table input{
 			border: none;
 		}
+		
 	</style>
 	<script>
 	$(document).ready(function(){
@@ -48,7 +49,7 @@
 
 				<tr>
 				<th scope="row">E-mail</th>
-				<td><input type="email" id="cellEmail" value="<?php echo $_SESSION['email'];?>"></td>
+				<td><input type="email" id="cellEmail" value="<?php echo $_SESSION['email'];?>" disabled></td>
 				</tr>
 				
 				<tr>

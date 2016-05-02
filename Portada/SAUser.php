@@ -54,21 +54,23 @@ function readUserByNickSA($TUser){
 	return $TUser;
 }
 function modifyUserSA($TUser){
-
-
+	$servername = "localhost:3306";
+	$username = "root";
+	$password = "1234";
+	$db = "AW_DB";
+	$conn = new mysqli($servername, $username, $password, $db);
+	modifyUserDAO($TUser,$conn);
+	$conn->close();
 }
 
-function readByIDSA(){
-
-}
-function readUserSA( $user){
-
-}
-function readAllUsersSA(){
-
-}
-function deleteUserSA(){
-
+function deleteUserSA(){	
+	$servername = "localhost:3306";
+	$username = "root";
+	$password = "1234";
+	$db = "AW_DB";
+	$conn = new mysqli($servername, $username, $password, $db);
+	deleteUserDAO($id,$conn);
+	$conn->close();
 }
 
 ?>

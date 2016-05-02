@@ -5,6 +5,8 @@
   <title>
   Inicio  
   </title>
+  <script>
+  </script>
 </head>
 <body>
 <?php include 'header.php' ?>
@@ -47,6 +49,24 @@
                           	$("#cellActors").val(data.Actors);
                           	$("#cellAwards").val(data.Awards);
                           	$("#poster").attr('src', data.Poster);
+                          	$.ajax({
+									type: "get",
+									url:'../Portada/ControllerMedia.php',
+									data: {'action':'exists','typeOfMedia': data.Type , 'idUser': '<?php echo $_SESSION["email"] ?>', 'idMedia': '<?php echo $_GET["id"] ?>'},
+									success: function(result) {
+										if(result == "false"){
+											$("#favouriteButton").text("Add to Favourites");
+											$("#favouriteButton").removeClass("btn-danger");
+											$("#favouriteButton").addClass("btn-success");
+										}
+										else{
+											$("#favouriteButton").text("Delete from favourites");
+											$("#favouriteButton").removeClass("btn-success");
+											$("#favouriteButton").addClass("btn-danger");
+										}
+
+									}
+					          });
                           }
                 });
 	});
@@ -126,7 +146,7 @@
 			</tbody>
 			</table>
 			<div style="text-align: center">
-				<button type="button" class="btn btn-primary" id="favouriteButton">Add to Favourites</button>
+				<button type="button" class="btn" id="favouriteButton">Add to Favourites</button>
 			</div>
 		 </div>
 		</div>
