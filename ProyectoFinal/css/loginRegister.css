@@ -1,0 +1,39 @@
+
+	
+	.register {
+	  max-width: 300px;
+	  padding: 15px;
+	  margin: 0 auto;
+
+	 
+	}
+	
+	h4{
+		
+		font-size:10px;
+	}
+
+	p{
+		font-size: 10px;
+	}
+	label{
+		font-size: 10px;	
+	}
+	#formularioRegistro *{
+      font:14px;
+    }
+	.avatar{
+		   	 max-width: 170px;
+    		display: block;
+    		margin: 0 auto;	}
+	#sha{
+		max-width: 340px;
+	    -webkit-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+	    -moz-box-shadow:    0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+	    box-shadow:         0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+	    border-radius: 6%;
+	  }
+ 	.inner
+	{
+	display: inline-block;
+	}
