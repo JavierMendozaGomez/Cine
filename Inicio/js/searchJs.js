@@ -35,15 +35,6 @@ function getHtml(typeOfSearch,title){
                                                       <\/div>";
                                             }
                                         html +=  "<\/section>\r\n";
-                                        if(data.totalResults > 4){
-                                            html+=" <button type=\"button\" class=\"btn btn-info\">";
-                                            switch(typeOfSearch){
-                                              case "game": html+="More games";break;
-                                              case "movie": html+="More movies";break;
-                                              case "series": html+="More series";break;
-                                            }
-                                            html+="</button></br></br>";
-                                          }
                                       return html;
                                       }
                                     }
@@ -99,15 +90,6 @@ function getAdvanceHTML(typeOfSearch,title){
                                               }
                                             }
                                         html +=  "<\/section>\r\n";
-                                        if(data.totalResults > 4){
-                                            html+=" <button type=\"button\" class=\"btn btn-info\">";
-                                            switch(typeOfSearch){
-                                              case "game": html+="More games";break;
-                                              case "movie": html+="More movies";break;
-                                              case "series": html+="More series";break;
-                                            }
-                                            html+="</button></br></br>";
-                                          }
                                       return html;
                                       }
                                     }
@@ -142,3 +124,38 @@ function getAdvanceHTML(typeOfSearch,title){
             $("#tituloSeries").show();           
        }
   }
+
+function getMediaByID(id, typeOfSearch){
+    var posterError;
+    switch(typeOfSearch){
+      case "game": posterError="http://vignette1.wikia.nocookie.net/donkeykong/images/4/43/Donkey_kong_pensativo.png/revision/latest?cb=20130606180457&path-prefix=es";break;
+      case "movie": posterError="http://cdn4.areajugones.es/wp-content/uploads/2015/05/Batman-Arkham-Trofeo-Enigma.jpg";break;
+      case "series": posterError="http://reactiongifs.me/wp-content/uploads/2014/10/tyrion-lannister-eyebrows-game-of-thrones.gif";break;
+    }
+    var html = "";
+    var url = "http://www.omdbapi.com/?i="+id+"&plot=full&r=json";
+    $.ajax({
+      type: "get",
+      url: url,
+      async:false,
+      success: function(data) { 
+         html+="<div class=\"movie\" title=\""+ id +"\">\r\n\
+         <img src=\""; 
+              if(data.Poster == "N/A")
+              html+=posterError;
+           else
+              html+=data.Poster;
+          html+="\" alt=\"\" class=\"poster\"\/>\r\n\
+          <div class=\"title\">"+data.Title+"<\/div>\r\n\
+             <div class=\"info\">\r\n\
+                                                              <span class=\"length\">"+""+"<\/span>\r\n\
+          <span class=\"year\">"+data.Year+ "<\/span>\r\n\
+             <\/div>\r\n\
+          <div class=\"desc\" id=\""+ data.imdbID +"\">\r\n\
+            "+ "" +" <\/div>\r\n\
+                   <\/div>\r\n";
+          return html;
+       }
+    });
+    return html;
+}

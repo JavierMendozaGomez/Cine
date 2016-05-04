@@ -17,12 +17,27 @@
 	</style>
 	<script>
 	$(document).ready(function(){
-		if(<?php echo $_SESSION['newOffers'] ?> == true){
+		<?php session_start() ?>
+		if(<?php echo $_SESSION['newOffers'] ?> == "1"){
 			 $("#cellOffersYes").prop("checked", true) 
 			}
 		else
 			 $("#cellOffersYes").prop("checked", false) 
+
+
+		$("#saveChanges").click(function(){
+
+		});
+
+		$("#cellNick").blur(function(){
+			alert("blussssuur");
+		});
+
+
 	   });	
+
+
+
 	 </script>
 </head>
 <body>
@@ -30,12 +45,12 @@
 <div class="container-fluid">
 	<div class="row">
 	  <div class="col-xs-6 col-sm-4" >
-		<ul class="sidebar">
+		<ul class="sidebar">	      
 	      <li class="sidebar-brand"><a href="">My Profile</a></li>
 	      <li><a href="myAccount.php">My account</a></li>
 	      <li><a href="myMovies.php">My movies</a></li>
-	      <li><a href="#">My games</a></li>
-	      <li><a href="#">My series</a></li>
+	      <li><a href="myGames.php">My games</a></li>
+	      <li><a href="mySeries.php">My series</a></li>
 	      </ul>
 	   </div>
     	<div class="col-xs-6 col-sm-4" style="background-color:white";>
@@ -87,8 +102,8 @@
 		</table>
 		</form>
 			<div align="center" display:inline>
-				<button type="button" class="btn btn-primary">Save changes</button>
-				<button type="button" class="btn btn-primary">Cancel</button>
+				<button type="button" class="btn btn-primary" id="saveChanges">Save changes</button>
+				<button type="button" class="btn btn-primary" id="cancelChanges">Cancel</button>
 			</div>
 		</div>
    </div>

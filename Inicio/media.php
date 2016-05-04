@@ -46,9 +46,22 @@
                           	$("#cellGenre").val(data.Genre);
                           	$("#cellDirector").val(data.Director);
                           	$("#cellWriter").val(data.Writer);
+                          	$("#cellType").val(data.Type);
                           	$("#cellActors").val(data.Actors);
                           	$("#cellAwards").val(data.Awards);
+                          	$("#cellRating").val(data.imdbRating)
+                          	var posterError;
+						    switch(data.Type){
+						      case "game": posterError="http://vignette1.wikia.nocookie.net/donkeykong/images/4/43/Donkey_kong_pensativo.png/revision/latest?cb=20130606180457&path-prefix=es";break;
+						      case "movie": posterError="http://cdn4.areajugones.es/wp-content/uploads/2015/05/Batman-Arkham-Trofeo-Enigma.jpg";break;
+						      case "series": posterError="http://reactiongifs.me/wp-content/uploads/2014/10/tyrion-lannister-eyebrows-game-of-thrones.gif";break;
+						    }
+                          	if(data.Poster == "N/A"){
+                          	 	$("#poster").attr('src', posterError);
+                          	}
+                          	else
                           	$("#poster").attr('src', data.Poster);
+
                           	$.ajax({
 									type: "get",
 									url:'../Portada/ControllerMedia.php',
@@ -64,15 +77,45 @@
 											$("#favouriteButton").removeClass("btn-success");
 											$("#favouriteButton").addClass("btn-danger");
 										}
-
 									}
 					          });
                           }
                 });
+
+		$("#favouriteButton").click(function(){
+			/*Si el usuario no tiene esa pelicula/juego/serie añadido a favoritos*/
+			if($( "#favouriteButton" ).hasClass( "btn-success" )){
+					$.ajax({
+									type: "get",
+									url:'../Portada/ControllerMedia.php',
+									data: {'action':'add','typeOfMedia': $("#cellType").val() , 'idUser': '<?php echo $_SESSION["email"] ?>', 'idMedia': '<?php echo $_GET["id"] ?>'},
+									success: function(result) {
+									$("#favouriteButton").removeClass("btn-success");
+									$("#favouriteButton").addClass("btn-danger");
+									$("#favouriteButton").text("Delete from favourites");
+
+									}
+					          });
+				}
+			else{
+				$.ajax({
+
+									type: "get",
+									url:'../Portada/ControllerMedia.php',
+									data: {'action':'delete','typeOfMedia': $("#cellType").val() , 'idUser': '<?php echo $_SESSION["email"] ?>', 'idMedia': '<?php echo $_GET["id"] ?>'},
+									success: function(result) {
+									$("#favouriteButton").removeClass("btn-danger");
+									$("#favouriteButton").addClass("btn-success");
+									$("#favouriteButton").text("Add to Favourites");
+									}
+					          });
+			}
+		});
+
 	});
 </script>
 <div class="container-fluid">
-	<div class="row " style="background-color: green">
+	<div class="row " style="background-color: #164A5D">
  		<div class="col-md-6" >
  		  <div class ="media">
 			<img id="poster" src="http://ia.media-imdb.com/images/M/MV5BMjQ0MTgyNjAxMV5BMl5BanBnXkFtZTgwNjUzMDkyODE@._V1_SX300.jpg" alt="" class="poster">		 
@@ -127,11 +170,18 @@
 				</textarea></td>
 				</tr>
 				
+
+				<tr>
+				<th scope="row">Type</th>
+				<td><input type="text" id="cellType"  disabled></td>
+				</tr>
+
 				<tr>
 				<th scope="row">Actors</th>
 				<td><textarea  cols="50" id="cellActors" disabled onchange="textAreaAdjust(this)">
 				</textarea></td>
 				</tr>
+				
 
 				<tr>
 				<th scope="row">Awards</th>
@@ -140,9 +190,10 @@
 				</tr>
 
 				<tr>
-				<th scope="row">ImdbRating</th>
-				<td><input type="text" id="cellCountry" value="Spain"></td>
-				</tr>				
+				<th scope="row">Rating</th>
+				<td><input type="text" id="cellRating" p  disabled></td>
+				</tr>
+
 			</tbody>
 			</table>
 			<div style="text-align: center">

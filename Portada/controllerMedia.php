@@ -3,12 +3,15 @@
 switch ($_GET["action"]) {
 	case 'add':{
 		switch ($_GET["typeOfMedia"]) {
-			case 'movie':
+			case 'movie':{
 				addMovieSA($_GET["idUser"],$_GET["idMedia"]);
+				}
 				break;
-			case 'series':
+			case 'series':{
 				addSeriesSA($_GET["idUser"],$_GET["idMedia"]);
+				}
 				break;
+
 			case 'game':
 				addGameSA($_GET["idUser"],$_GET["idMedia"]);
 				break;						
@@ -16,6 +19,8 @@ switch ($_GET["action"]) {
 				break;
 		}
 	}
+	break;
+
 	case 'delete':{
 		switch ($_GET["typeOfMedia"]) {
 			case 'movie':
@@ -31,6 +36,7 @@ switch ($_GET["action"]) {
 				break;
 		}
 	}
+	break;
 	case 'exists':{
 		switch ($_GET["typeOfMedia"]) {
 			case 'movie':{
@@ -58,5 +64,24 @@ switch ($_GET["action"]) {
 				break;
 		}
 	}
+	break;
+
+	case 'getMovies' :{
+
+			echo json_encode(getMoviesSA($_GET["idUser"]));
+		}		
+	break;
+
+	case 'getSeries' :{
+			echo json_encode(getSeriesSA($_GET["idUser"]));
+		}
+	break;
+
+
+	case 'getGames' :{
+			echo json_encode(getGamesSA($_GET["idUser"]));
+		}
+	break;
+
 }
 ?>

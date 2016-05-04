@@ -9,6 +9,7 @@
 		$conn = new mysqli($servername, $username, $password, $db);
 		addMovieDAO($idUser,$idMedia,$conn);
 		$conn->close();
+		return TRUE;
 	}
 
 	function addSeriesSA($idUser, $idMedia){
@@ -79,7 +80,7 @@
 		$password = "1234";
 		$db = "AW_DB";
 		$conn = new mysqli($servername, $username, $password, $db);
-		$ok = existsMovieDAO($idUser, $idMedia, $conn);
+		$ok = existsSeriesDAO($idUser, $idMedia, $conn);
 		$conn->close();
 		return $ok;
 	}
@@ -90,8 +91,41 @@
 		$password = "1234";
 		$db = "AW_DB";
 		$conn = new mysqli($servername, $username, $password, $db);
-		$ok = existsMovieDAO($idUser, $idMedia, $conn);
+		$ok = existsGameDAO($idUser, $idMedia, $conn);
 		$conn->close();
 		return $ok;
+	}
+
+	function getMoviesSA($idUser){
+		$servername = "localhost:3306";
+		$username = "root";
+		$password = "1234";
+		$db = "AW_DB";
+		$conn = new mysqli($servername, $username, $password, $db);
+		$listOfMovies =  getMoviesDAO($idUser, $conn);
+		$conn->close();
+		return $listOfMovies;
+	}
+
+	function getSeriesSA($idUser){
+		$servername = "localhost:3306";
+		$username = "root";
+		$password = "1234";
+		$db = "AW_DB";
+		$conn = new mysqli($servername, $username, $password, $db);
+		$listOfSeries =  getSeriesDAO($idUser, $conn);
+		$conn->close();
+		return $listOfSeries;
+	}
+
+	function getGamesSA($idUser){
+		$servername = "localhost:3306";
+		$username = "root";
+		$password = "1234";
+		$db = "AW_DB";
+		$conn = new mysqli($servername, $username, $password, $db);
+		$listOfGames =  getGamesDAO($idUser, $conn);
+		$conn->close();
+		return $listOfGames;
 	}
 ?>

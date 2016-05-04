@@ -2,15 +2,19 @@
 
 	function addMovieDAO($idUser,$idMedia, $conn){
 	
-	$sql = "INSERT INTO MOVIE(idUser,idMovie) VALUES ('".$idUser."', '".$idMedia."')";
-	if($conn->query($sql) === TRUE){
-		return TRUE;
-	}
-	else{
-		return FALSE;
+		$sql = "INSERT INTO MOVIE(idUser,idMovie) VALUES ('".$idUser."', '".$idMedia."')";
+		try{
+		if($conn->query($sql) === TRUE){
+			return TRUE;
+		}
+		else{
+			return FALSE;
+			}
+		}
+		catch (Exception $e){
+			echo "exception capturada";
 		}
 	}
-
 	function addSeriesDAO($idUser,$idMedia, $conn){
 	$sql = "INSERT INTO SERIES(idUser,idSeries) VALUES ('".$idUser."', '".$idMedia."')";
 	if($conn->query($sql) === TRUE){
@@ -93,10 +97,58 @@
 	$resultado = $conn->query($sql);
   	$fila = $resultado->fetch_array(MYSQLI_NUM);
 	$resultado->close();
-		if($fila[0] == "0")
+		if($fila[0] == "0"){
 		  	return FALSE;
+		}
 		else
 		  	return TRUE;
 	}
 
+	function getMoviesDAO($idUser, $conn){
+		$arrayMovies = array();
+ 		$sql = "SELECT idMovie FROM MOVIE WHERE idUser='".$idUser."';";
+		if ($conn->multi_query($sql)) {
+		    do {
+		        if ($resultado = $conn->use_result()) {
+		            while ($fila = $resultado->fetch_row()) {
+		            	array_push($arrayMovies,$fila[0]);
+		            }
+		            $resultado->close();
+		        }
+		    } while ($conn->next_result());
+		}
+		return $arrayMovies;
+	}
+
+	function getSeriesDAO($idUser, $conn){
+		$arraySeries = array();
+ 		$sql = "SELECT idSeries FROM SERIES WHERE idUser='".$idUser."';";
+		if ($conn->multi_query($sql)) {
+		    do {
+		        if ($resultado = $conn->use_result()) {
+		            while ($fila = $resultado->fetch_row()) {
+		            	array_push($arraySeries,$fila[0]);
+		            }
+		            $resultado->close();
+		        }
+		    } while ($conn->next_result());
+		}
+		return $arraySeries;
+	}
+
+	function getGamesDAO($idUser, $conn){
+		$arrayGames = array();
+ 		$sql = "SELECT idGame FROM GAME WHERE idUser='".$idUser."';";
+		if ($conn->multi_query($sql)) {
+		    do {
+		        if ($resultado = $conn->use_result()) {
+		            while ($fila = $resultado->fetch_row()) {
+		            	array_push($arrayGames,$fila[0]);
+		            }
+		            $resultado->close();
+		        }
+		    } while ($conn->next_result());
+		}
+		return $arrayGames;
+	}
 ?>
