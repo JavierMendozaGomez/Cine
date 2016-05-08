@@ -31,6 +31,7 @@
 			}
 
 		$("#saveChanges").click(function(){
+			if(!($("#thNick").hasClass("danger"))){
 			$.ajax({
 				url:'/YourMedia/View/Controller/ControllerUser.php',
 				type:'post',
@@ -42,6 +43,7 @@
 					window.location.reload();
 				}
 			});
+			}
 		});
 		$("#cancelChanges").click(function(){
 			window.location.reload();
