@@ -11,3 +11,6 @@ La tecnología usada para la creación de YourMedia ha sido:
 * Ajax
 * PHP
 * Mysql
+
+##Video demostración de su funcionamiento
+[![Demostracion de su funcionamiento](http://i.imgur.com/0iel19y.png)](https://youtu.be/Xpf762jVYI8 "YourMedia")
