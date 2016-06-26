@@ -14,3 +14,8 @@ La tecnología usada para la creación de YourMedia ha sido:
 
 ##Video demostración de su funcionamiento
 [![Demostracion de su funcionamiento](http://i.imgur.com/3bcqTqy.png)](https://youtu.be/Xpf762jVYI8 "YourMedia")
+
+
+License
+===
+[GNU GPL Version 3](https://www.gnu.org/licenses/gpl-3.0.html), more [info](http://en.wikipedia.org/wiki/GNU_General_Public_License).
